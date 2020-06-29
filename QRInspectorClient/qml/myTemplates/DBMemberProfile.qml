@@ -27,6 +27,8 @@ Popup {
     property int fontsize: height/25
     property var infoRow
 
+    property bool hasphoto: false
+
     onClosed: item.destroy()
     Rectangle {
         anchors.fill: parent
@@ -43,7 +45,8 @@ Popup {
             acceptSource: "../../images/edit.png"
             onAcceptClicked: {
                 item.destroy()
-                item.parent.parent.push("../../DBAddMemberPage.qml",{"editMember":infoRow[4]})
+                item.parent.parent.push("../../DBAddMemberPage.qml",{"editMember" : infoRow[4], "hasphoto" : item.hasphoto})
+                console.log(item.hasphoto)
             }
         }
 
@@ -291,6 +294,8 @@ Popup {
             img.layer.enabled=true
             changerect.visible=true
             img.source = "image://serverImgProvider/"+id++;
+            item.hasphoto=true
+            console.log(item.hasphoto)
         }
         onGetServerResponse: img.source="image://QZXing/encode/"+infoRow[4];
     }

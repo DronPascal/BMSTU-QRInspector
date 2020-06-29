@@ -49,7 +49,8 @@ Item {
             Row {
                 id: boxrow
                 anchors.verticalCenter: parent.verticalCenter
-                spacing: (mainitem.width-30-mainlabel.width-label.width*7)/7 > mainitem.width/30 ? mainitem.width/30 : (mainitem.width-30-mainlabel.width-label.width*7)/7>0 ? (mainitem.width-30-mainlabel.width-label.width*7)/7 : 0
+                spacing: Math.min((mainitem.width-mainlabel.width-20-7*mon.width)/6, 20)
+                    //(mainitem.width-30-mainlabel.width-label.width*7)/7 > mainitem.width/30 ? mainitem.width/30 : (mainitem.width-30-mainlabel.width-label.width*7)/7>0 ? (mainitem.width-30-mainlabel.width-label.width*7)/7 : 0
                 Column {
                     Label {
                         id: label

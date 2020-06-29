@@ -89,5 +89,7 @@
         <file>images/switchpersqr.png</file>
         <file>images/closephoto.png</file>
         <file>images/make_photo.png</file>
+        <file>gif/success.gif</file>
+        <file>images/rotate.png</file>
     </qresource>
 </RCC>

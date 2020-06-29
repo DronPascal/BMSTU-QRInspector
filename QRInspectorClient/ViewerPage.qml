@@ -37,6 +37,7 @@ Page {
         focus.focusPointMode: Camera.FocusPointCenter
         viewfinder.maximumFrameRate: 5
         onPositionChanged: globalSettings.cameraPosition = camera.position
+        Component.onCompleted: console.log(camera.viewfinder.resolution.width+"     "+ camera.viewfinder.resolution.height)
     }
 
     QZXingFilter

@@ -38,7 +38,8 @@ Page {
             if (mcvevents.elementmodel.count===0 && mcvmembers.elementmodel.count===0)
                 groupsNotSelectedDialog.open()
             else
-                addToDatabase()
+                createNewProfileDialog.open()
+                //addToDatabase()
     }
 
     function addToDatabase() {
@@ -178,7 +179,10 @@ Page {
             if (data==="request executed")
             {
                 if (page.editGroup=="")
-                    queryExecutedDialog.open();
+                {
+                    successanimation.play()
+                    mtf1.fieldText=""
+                }//queryExecutedDialog.open();
                 else
                     operationSuccessfullyCompletedDialog.open();
             }
@@ -188,21 +192,35 @@ Page {
         onErrorFounded: connectionErrorDialog.open();
     }
     Dialog {
-        id: queryExecutedDialog
-        title: qsTr("Info")+mytrans.emptyString
-        standardButtons: Dialog.No | Dialog.Yes
+        id: createNewProfileDialog
+        title: qsTr("Warning")+mytrans.emptyString
+        standardButtons: Dialog.Ok | Dialog.Cancel
         anchors.centerIn: parent
         font.pixelSize: fontSize
         Label {
-            text: qsTr("Group <b>successfully</b> created. Do you want to <b>edit</b> created group?")+mytrans.emptyString
+            text: qsTr("Create/change a group?")+mytrans.emptyString
             anchors.fill: parent
             font.pixelSize: fontSize
             wrapMode: Text.WordWrap
         }
-        onAccepted: {
-            page.editGroup=mtf1.fieldText;
-        }
+        onAccepted: addToDatabase()
     }
+//    Dialog {
+//        id: queryExecutedDialog
+//        title: qsTr("Info")+mytrans.emptyString
+//        standardButtons: Dialog.No | Dialog.Yes
+//        anchors.centerIn: parent
+//        font.pixelSize: fontSize
+//        Label {
+//            text: qsTr("Group <b>successfully</b> created. Do you want to <b>edit</b> created group?")+mytrans.emptyString
+//            anchors.fill: parent
+//            font.pixelSize: fontSize
+//            wrapMode: Text.WordWrap
+//        }
+//        onAccepted: {
+//            page.editGroup=mtf1.fieldText;
+//        }
+//    }
 
     Dialog {
         id: queryNotExecutedDialog
@@ -286,7 +304,7 @@ Page {
         }
         onClosed: {
             stackView.pop();
-            stackView.push("DBAddGroupPage.qml");
+            //stackView.push("DBAddGroupPage.qml");
         }
     }
 

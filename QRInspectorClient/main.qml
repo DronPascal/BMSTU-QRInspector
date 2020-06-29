@@ -180,10 +180,11 @@ ApplicationWindow
     }
     function setLanguage(lang)
     {
-        if (lang==="")
-            mytrans.updateLanguage(MyLang.EN)
-        else if (lang==="Russian")
+
+        if (lang==="Russian")
             mytrans.updateLanguage(MyLang.RU)
+        else
+            mytrans.updateLanguage(MyLang.EN)
     }
     function changeRole(){
         initSettings.initItem="StartPage.qml"
@@ -491,6 +492,33 @@ ApplicationWindow
             onTriggered: {
                 consoleImg.source=":/none"
             }
+        }
+    }
+
+
+    //##########################################
+    property alias successanimation: successanimation
+    AnimatedImage {
+        id: successanimation;
+        z:11
+        width: parent.width
+        height: width
+        visible: false
+        paused: true
+        anchors.centerIn: parent
+        source: "../gif/success.gif"
+        onCurrentFrameChanged: {
+            if (currentFrame==frameCount-1)
+            {
+                paused=true;
+                visible=false
+            }
+        }
+        //onPlayingChanged: playing ? visible=true : {}
+        function play(){
+            currentFrame=0
+            successanimation.paused=false
+            successanimation.visible=true
         }
     }
 

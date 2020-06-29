@@ -1,11 +1,12 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtMultimedia 5.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtMultimedia 5.15
 
 Page {
     id: page
     title: "Profile Camera Page"
     visible: true
+    property bool firsttime: true
 
     Keys.onReleased: {
         if (event.key === Qt.Key_Back) {
@@ -30,7 +31,6 @@ Page {
             focusMode: CameraFocus.FocusContinuous
             focusPointMode: CameraFocus.FocusPointAuto
         }
-
         //viewfinder.resolution: Qt.size(400, 400)
 
         imageProcessing.whiteBalanceMode: CameraImageProcessing.WhiteBalanceAuto
@@ -41,12 +41,12 @@ Page {
         }
 
         flash.mode: Camera.FlashRedEyeReduction
-
         captureMode: Camera.CaptureStillImage
         imageCapture {
             onImageCaptured: {
                 photoPreview.source = preview  // Show the preview in an Imag
                 //photopreview =preview
+                photoPreview.update()
                 camera.prev= preview
             }
             onImageSaved: {
@@ -83,9 +83,22 @@ Page {
         }
     }
 
+    Text {
+        id: choosetext
+        text: qsTr("Click to select")+mytrans.emptyString
+        color: "mediumpurple"
+        anchors.topMargin: photoPreview.width/40
+        z: 11
+        anchors.top: photoPreview.top
+        anchors.horizontalCenter: photoPreview.horizontalCenter
+        visible: photoPreview.visible
+        font.pixelSize: photoPreview.width/text.length*1.5
+    }
     Image {
         id: photoPreview
         visible: false
+        z:10
+        cache: false
         anchors.centerIn: parent
         width: Math.min(parent.width, parent.height)*0.7
         height: width
@@ -93,24 +106,26 @@ Page {
         fillMode: Image.PreserveAspectCrop
         smooth: true
         onSourceChanged: visible=true
-        Image {
-            id: acceptphoto
-            visible: parent.visible
-            source: "../images/accept_light.png"
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 5
-            anchors.horizontalCenter: parent.horizontalCenter
-            width: shotbutton.width/2.5
-            height: width
-            sourceSize.width: width
-            sourceSize.height: width
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    photopreview =camera.prev
-                    photosave = camera.saved
-                    stackView.pop()
-                }
+//        Image {
+//            id: acceptphoto
+//            visible: parent.visible
+//            source: "../images/accept_light.png"
+//            anchors.bottom: parent.bottom
+//            anchors.bottomMargin: 5
+//            anchors.horizontalCenter: parent.horizontalCenter
+//            width: shotbutton.width
+//            height: width
+//            sourceSize.width: width
+//            sourceSize.height: width
+
+//        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                photopreview =camera.prev
+                photosave = camera.saved
+                page.firsttime=true
+                stackView.pop()
             }
         }
         Rectangle {
@@ -126,7 +141,7 @@ Page {
 
     Rectangle {
         id: shotbutton
-        height: photoPreview.width/5
+        height: photoPreview.width/3
         width: height
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 5
@@ -149,7 +164,11 @@ Page {
             onClicked:  {
                 console.log("capture")
                 camera.imageCapture.capture()
-                camera.imageCapture.ima
+//                if (page.firsttime)
+//                {
+//                    camera.imageCapture.capture()
+//                    page.firsttime=false
+//                }
             }
         }
     }

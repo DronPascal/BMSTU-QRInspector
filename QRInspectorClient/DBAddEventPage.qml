@@ -59,7 +59,8 @@ Page {
                                 if (mcvgroups.elementmodel.count==0 && mcvmembers.elementmodel.count==0)
                                     groupsNotSelectedDialog.open()
                                 else
-                                    addToDatabase()
+                                    //addToDatabase()
+                                    createNewProfileDialog.open()
                                 return;
                             }
                         }
@@ -325,7 +326,9 @@ Page {
             if (data==="request executed")
             {
                 if (page.editEvent=="")
-                    queryExecutedDialog.open();
+                {
+                    successanimation.play()
+                }//queryExecutedDialog.open();
                 else
                     operationSuccessfullyCompletedDialog.open();
             }
@@ -333,6 +336,20 @@ Page {
                 queryNotExecutedDialog.open();
         }
         onErrorFounded: connectionErrorDialog.open();
+    }
+    Dialog {
+        id: createNewProfileDialog
+        title: qsTr("Warning")+mytrans.emptyString
+        standardButtons: Dialog.Ok | Dialog.Cancel
+        anchors.centerIn: parent
+        font.pixelSize: fontSize
+        Label {
+            text: qsTr("Create/change a event?")+mytrans.emptyString
+            anchors.fill: parent
+            font.pixelSize: fontSize
+            wrapMode: Text.WordWrap
+        }
+        onAccepted: addToDatabase()
     }
     Dialog {
         id: deleteDialog
@@ -348,22 +365,22 @@ Page {
         }
         onAccepted: sqlhandler.sendGetQuery("delete from events where name='"+page.editEvent+"'")
     }
-    Dialog {
-        id: queryExecutedDialog
-        title: qsTr("Info")+mytrans.emptyString
-        standardButtons: Dialog.No | Dialog.Yes
-        anchors.centerIn: parent
-        font.pixelSize: fontSize
-        Label {
-            text: "Event <b>successfully</b> created. Do you want to edit created event?"
-            anchors.fill: parent
-            font.pixelSize: fontSize
-            wrapMode: Text.WordWrap
-        }
-        onAccepted: {
-            page.editEvent=mtf1.fieldText;
-        }
-    }
+//    Dialog {
+//        id: queryExecutedDialog
+//        title: qsTr("Info")+mytrans.emptyString
+//        standardButtons: Dialog.No | Dialog.Yes
+//        anchors.centerIn: parent
+//        font.pixelSize: fontSize
+//        Label {
+//            text: "Event <b>successfully</b> created. Do you want to edit created event?"
+//            anchors.fill: parent
+//            font.pixelSize: fontSize
+//            wrapMode: Text.WordWrap
+//        }
+//        onAccepted: {
+//            page.editEvent=mtf1.fieldText;
+//        }
+//    }
     Dialog {
         id: queryNotExecutedDialog
         title: qsTr("Error")+mytrans.emptyString
@@ -391,7 +408,7 @@ Page {
         }
         onClosed: {
             stackView.pop();
-            stackView.push("DBAddEventPage.qml");
+            //stackView.push("DBAddEventPage.qml");
         }
     }
     Dialog {

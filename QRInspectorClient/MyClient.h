@@ -56,7 +56,7 @@ public:
     //    Q_INVOKABLE bool sendToServer(const QString& strMsg);
     //    Q_INVOKABLE void connectToServer(const QString& strHost, QString nPort);
     Q_INVOKABLE void sendGet(const QString& strMsg, const QString& command="");
-    Q_INVOKABLE void sendImage(const QString& name, const QString& path);
+    Q_INVOKABLE void sendImage(const QString& name, const QString& path, int rotation);
     Q_INVOKABLE void deleteImg(const QString&path);
     //     Q_INVOKABLE void send(){
     //        QNetworkAccessManager *manager = new QNetworkAccessManager(this);

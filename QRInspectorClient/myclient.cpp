@@ -65,7 +65,7 @@ void MyClient::getResponse(QNetworkReply *reply)
     }
 }
 
-void MyClient::sendImage(const QString& name, const QString& path) {
+void MyClient::sendImage(const QString& name, const QString& path, int rotation) {
 
     QString imgName = path.mid(path.lastIndexOf('/')+1, path.lastIndexOf('.')-path.lastIndexOf('/')-1);
     qDebug() <<"IMAGE NAME"<<imgName << "BUT WILL BE SAVED AS " << name;
@@ -91,6 +91,13 @@ void MyClient::sendImage(const QString& name, const QString& path) {
     QRect rect(QPoint(img.width()/2-minxy, img.height()/2-minxy), QPoint(img.width()/2+minxy, img.height()/2+minxy));
     QImage newImg = img.copy(rect);
     newImg=newImg.scaled(QSize(200,200), Qt::IgnoreAspectRatio,  Qt::FastTransformation);
+    if (rotation!=0)
+    {
+        QMatrix matr;
+        matr=matr.rotate(90*rotation);
+        QTransform trans(matr);
+        newImg=newImg.transformed(trans);
+    }
 
     QByteArray arr;
     QBuffer buffer(&arr);

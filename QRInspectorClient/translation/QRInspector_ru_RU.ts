@@ -262,7 +262,7 @@ Connect to the server and familiarize yourself with the interface for creating c
 Подключитесь к серверу и ознакомьтесь с интерфейсом создания конфигурационных кодов, а после перейдите в меню настройки базы данных.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="151"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="152"/>
         <source>This page has four sections:&lt;br/&gt;
 1) Adding profiles of members, groups and events.&lt;br/&gt;
 2) View tables of existing profiles and edit them.&lt;br/&gt;
@@ -277,7 +277,7 @@ To work with the database, the corresponding database access password is require
 Для работы с базой данных требуется соответствующий пароль доступа к базе данных, который вы указали в конфигурационном файле сервера. Введите его и продолжайте изучение интерфейса по порядку, начиная с добавления участников.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="160"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="161"/>
         <source>&lt;b&gt;Add Member&lt;/b&gt;&lt;br/&gt;
 When adding and editing a member’s profile, the required fields are the first and last name. You can create members with the same name. Each of them will be assigned a unique ID and QR code.&lt;br/&gt;
 After creating groups or events, fields will appear in this interface with which you can select groups and events to which you would like to add a member already at the stage of creating his profile.&lt;br/&gt;&lt;br/&gt;
@@ -371,7 +371,7 @@ After the server starts successfully, you can proceed to the next step. Click OK
 После успешного запуска сервера можете переходить к следующему шагу. Нажмите ОК и  выберите роль, о возможностях которой вы бы хотели узнать. Порядок изучения функционала приложения не играет большой роли.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="140"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="141"/>
         <source>&lt;b&gt;Admin menu&lt;/b&gt;&lt;br/&gt;
 This page is the admin home page.&lt;br/&gt;
 The role of the administrator is to configure inspectors and create profiles of members, groups, and events. But to gain access to these functions, you must first connect to the server. Use the data that you received at the stage of setting up and starting the server.&lt;br/&gt;&lt;br/&gt;
@@ -381,14 +381,14 @@ The role of the administrator is to configure inspectors and create profiles of 
 Connect to the server and familiarize yourself with the interface for creating configuration codes, and then go to the database setup menu.</source>
         <translation>&lt;b&gt;Меню администратора&lt;/b&gt;&lt;br/&gt;
 Эта страница является главной страницей администратора.&lt;br/&gt;
-Роль администратора заключается в настройке инспекторов и создании профилей участников, групп и событий. Но для получения доступа к этим функциям сначала надо подключиться к серверу. Воспользуйтесь данными, которые вы получили на этапе настройки и запуска сервера.&lt;br/&gt;&lt;br/&gt;
--Кнопка меню “Создать конфигурационный код инспектора” открывает диалог, введя в котором ID конфигурируемого инспектора, пароль приложения, задержку повторного учета и выбрав звук входа, после нажатия кнопки ОК на экране появится QR код, распознав который инспектором, последний изменит свои настройки.&lt;br/&gt;
+Роль администратора заключается в настройке валидаторов и создании профилей участников, групп и событий. Но для получения доступа к этим функциям сначала надо подключиться к серверу. Воспользуйтесь данными, которые вы получили на этапе настройки и запуска сервера.&lt;br/&gt;&lt;br/&gt;
+-Кнопка меню “Создать конфигурационный код валидатора” открывает диалог, введя в котором ID конфигурируемого валидатора, пароль приложения, задержку повторного учета и выбрав звук входа, после нажатия кнопки ОК на экране появится QR код, распознав который валидатором, последний изменит свои настройки.&lt;br/&gt;
 -Кнопка настройки базы данных открывает меню для работы с профилями участников, групп и событий.&lt;br/&gt;
 -Кнопка изменить роль позволяет перейти на стартовую страницу для повторного выбора роли. Введенные настройки при этом не пропадают. &lt;br/&gt;&lt;br/&gt;
 Подключитесь к серверу и ознакомьтесь с интерфейсом создания конфигурационных кодов, а после перейдите в меню настройки базы данных.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="167"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="168"/>
         <source>&lt;b&gt;Add Group&lt;/b&gt;&lt;br/&gt;
 When adding and editing a group, the name is required. The name of the group must be unique, otherwise the group will not be created.&lt;br/&gt;
 After creating profiles of members or events in this interface, fields will appear with which you can select the members in this group and the events to which groups will be invited&lt;br/&gt;&lt;br/&gt;
@@ -461,7 +461,6 @@ After the server starts successfully, you can proceed to the next step. Click OK
 После успешного запуска сервера можете переходить к следующему шагу. Нажмите ОК и  выберите роль, о возможностях которой вы бы хотели узнать. Порядок изучения функционала приложения не играет большой роли.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="281"/>
         <source>It is strongly recommended that you &lt;b&gt;read this&lt;/b&gt; comprehensive guide, which describes all the features of the presented product and the steps to configure it.&lt;br/&gt;&lt;br/&gt;
 This client-server application is a working solution for recording visits to &quot;events&quot; by company members using QR codes for identification. By &quot;events&quot; we mean meetings, classes, and any other kind of meeting, timed to a specific place and time. A recognition device must correspond to each such place, for the description of which we have chosen the word &quot;inspector&quot; and we will adhere to this definition in further instructions.&lt;br/&gt;&lt;br/&gt;
 This application allows you to choose one of two roles: Inspector and Administrator.&lt;br/&gt;&lt;br/&gt;
@@ -470,7 +469,7 @@ This application allows you to choose one of two roles: Inspector and Administra
 Any authorization and accounting of visits occur through the server application. Therefore, it is important to complete the first step:&lt;br/&gt;
 1) Download the QRInspector server application for Linux x64 or Windows x64 / x86, configure and run it. Follow the instructions in the &quot;readme.txt&quot; file in the folder of the downloaded application. You can download any version of the server just clicked on &lt;a href=&apos;http://www.a.org&apos;&gt;https://drive.google.com/drive/folders/1WliTTdy9TGyL9vs62rT4UmO5bYHCzjID?usp=sharing&lt;/a&gt;. This link will open after using the OK button.&lt;br/&gt;&lt;br/&gt;
 After the server starts successfully, you can proceed to the next step. Click OK and select the role that you would like to know about the features. The order of studying the functionality of the application does not play a big role.</source>
-        <translation>Настоятельно &lt;b&gt;рекомендуем прочесть&lt;/b&gt; данное исчерпывающее руководство, в котором описаны все возможности представленного продукта и шаги по его настройке.&lt;br/&gt;&lt;br/&gt;
+        <translation type="vanished">Настоятельно &lt;b&gt;рекомендуем прочесть&lt;/b&gt; данное исчерпывающее руководство, в котором описаны все возможности представленного продукта и шаги по его настройке.&lt;br/&gt;&lt;br/&gt;
 Данное клиент-серверное приложение является рабочим решением для учета посещений &quot;событий&quot; участниками компании с использованием QR кодов для идентификации. Под &quot;событиями&quot; имеются в виду встречи, занятия и любого другого рода собрания, приуроченные к определенному месту и времени. Каждому такому месту должно соответствовать устройство распознавания, для описания которого мы выбрали слово &quot;инспектор&quot; и будем придерживаться этого определения в дальнейших инструкциях.&lt;br/&gt;&lt;br/&gt;
 Данное приложение позволяет выбрать одну из двух ролей: Инспектор и Администратор.&lt;br/&gt;&lt;br/&gt;
 -Устройство с ролью &quot;Инспектор&quot; после настройки и подключения к приложению-серверу QRInspector, как уже было описано выше, будет считывать QR-коды, которые участники будут демонстрировать перед его камерой. Только после успешного распознавания QR кода и проверки на сервере, участнику зачтется посещение.&lt;br/&gt;&lt;br/&gt;
@@ -480,7 +479,7 @@ After the server starts successfully, you can proceed to the next step. Click OK
 После успешного запуска сервера можете переходить к следующему шагу. Нажмите ОК и  выберите роль, о возможностях которой вы бы хотели узнать. Порядок изучения функционала приложения не играет большой роли.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="174"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="175"/>
         <source>&lt;b&gt;Add Event&lt;/b&gt;&lt;br/&gt;
 When adding and editing an event, the required fields are the name, inspector ID, start time, end time and date or days of the week on which the event will occur. The name of the event must be unique, otherwise the event will not be created.&lt;br/&gt;&lt;br/&gt;
 When entering date and time values, strictly adhere to the format indicated on the background of the input field.&lt;br/&gt;
@@ -490,8 +489,8 @@ After creating profiles of members or groups in this interface, fields will appe
 If you invite a group and an individual member of this group to the event, then after deleting the group, the member will have an invitation.&lt;br/&gt;&lt;br/&gt;
 Try creating a new event. After that, proceed to the section for viewing the created profiles and editing them.</source>
         <translation>&lt;b&gt;Добавление события&lt;/b&gt;&lt;br/&gt;
-При добавлении и редактировании события обязательными для заполнения полями являются название, ID инспектора, время начала, время окончания и дата или дни недели, по которым будет происходить событие. Название события должно быть уникальным, в противном случае событие не будет создано.&lt;br/&gt;&lt;br/&gt;
-ID инспектора должен полностью совпадать с тем который вы указали в настройках инспектора, для которого создается событие, иначе посещения не будут засчитываться.&lt;br/&gt;
+При добавлении и редактировании события обязательными для заполнения полями являются название, ID валидатора, время начала, время окончания и дата или дни недели, по которым будет происходить событие. Название события должно быть уникальным, в противном случае событие не будет создано.&lt;br/&gt;&lt;br/&gt;
+ID валидатора должен полностью совпадать с тем который вы указали в настройках валидатора, для которого создается событие, иначе посещения не будут засчитываться.&lt;br/&gt;
 При вводе значений даты и времени строго придерживайтесь формата, указанного на фоне поля ввода.&lt;br/&gt;
 Нельзя создать события, время начала которых больше времени окончания. Так же нельзя создать единоразовое событие, дата которого меньше текущей.&lt;br/&gt;&lt;br/&gt;
 После создания профилей участников или групп в данном интерфейсе появятся поля, с помощью которых, вы сможете выбрать участников и группы, приглашенные на данное событие.&lt;br/&gt;
@@ -499,7 +498,9 @@ ID инспектора должен полностью совпадать с т
 Попробуйте создать новое событие. После этого переходите к разделу просмотра созданных профилей и их редактирования.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="76"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="77"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="267"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="294"/>
         <source>It is strongly recommended that you &lt;b&gt;read this&lt;/b&gt; comprehensive guide, which describes all the features of the presented product and the steps to configure it.&lt;br/&gt;&lt;br/&gt;
 The application was developed and released by students of the BMSTU FN11 faculty: Pascal A.P., Shibanov A.O., Kadiev A. Lecturer - Gumirgaliev T.R.&lt;br/&gt;&lt;br/&gt;
 This client-server application is a working solution for recording visits to &quot;events&quot; by company members using QR codes for identification. By &quot;events&quot; we mean meetings, classes, and any other kind of meeting, timed to a specific place and time. A recognition device must correspond to each such place, for the description of which we have chosen the word &quot;inspector&quot; and we will adhere to this definition in further instructions.&lt;br/&gt;&lt;br/&gt;
@@ -511,16 +512,16 @@ Any authorization and accounting of visits occur through the server application.
 After the server starts successfully, you can proceed to the next step. Click OK and select the role that you would like to know about the features. The order of studying the functionality of the application does not play a big role.</source>
         <translation>Настоятельно &lt;b&gt;рекомендуем прочесть&lt;/b&gt; данное исчерпывающее руководство, в котором описаны все возможности представленного продукта и шаги по его настройке.&lt;br/&gt;&lt;br/&gt;
 Приложение разработали и выпустили студенты кафедры ФН11 МГТУ им. Баумана: Паскал А.П., Шибанов А.О., Кадиев А. Преподаватель – Гумиргалиев Т.Р.&lt;br/&gt;&lt;br/&gt;
-Данное клиент-серверное приложение является рабочим решением для учета посещений &quot;событий&quot; участниками компании с использованием QR кодов для идентификации. Под &quot;событиями&quot; имеются в виду встречи, занятия и любого другого рода собрания, приуроченные к определенному месту и времени. Каждому такому месту должно соответствовать устройство распознавания, для описания которого мы выбрали слово &quot;инспектор&quot; и будем придерживаться этого определения в дальнейших инструкциях.&lt;br/&gt;&lt;br/&gt;
-Данное приложение позволяет выбрать одну из двух ролей: Инспектор и Администратор.&lt;br/&gt;&lt;br/&gt;
--Устройство с ролью &quot;Инспектор&quot; после настройки и подключения к приложению-серверу QRInspector, как уже было описано выше, будет считывать QR-коды, которые участники будут демонстрировать перед его камерой. Только после успешного распознавания QR кода и проверки на сервере, участнику зачтется посещение.&lt;br/&gt;&lt;br/&gt;
+Данное клиент-серверное приложение является рабочим решением для учета посещений &quot;событий&quot; участниками компании с использованием QR кодов для идентификации. Под &quot;событиями&quot; имеются в виду встречи, занятия и любого другого рода собрания, приуроченные к определенному месту и времени. Каждому такому месту должно соответствовать устройство распознавания, для описания которого мы выбрали слово &quot;валидатор&quot; и будем придерживаться этого определения в дальнейших инструкциях.&lt;br/&gt;&lt;br/&gt;
+Данное приложение позволяет выбрать одну из двух ролей: Валидатор и Администратор.&lt;br/&gt;&lt;br/&gt;
+-Устройство с ролью &quot;Валидатор&quot; после настройки и подключения к приложению-серверу QRInspector, как уже было описано выше, будет считывать QR-коды, которые участники будут демонстрировать перед его камерой. Только после успешного распознавания QR кода и проверки на сервере, участнику зачтется посещение.&lt;br/&gt;&lt;br/&gt;
 -Устройство с ролью &quot;Администратор&quot; после подключения к приложению-серверу QRInspector, предоставит пользователю возможность создавать и изменять профили участников, групп и событий.&lt;br/&gt;&lt;br/&gt;
 Любая авторизация и учет посещений происходят через серверное приложение. Поэтому важно выполнить первый шаг:&lt;br/&gt;
 1) Загрузить серверное приложение QRInspector для Linux x64 или Windows x64/x86, настроить и запустить его. Следуйте инструкциям в &quot;readme.txt&quot; файле в папке скачанного приложения. Любую версию сервера вы можете скачать по ссылке &lt;a href=&apos;http://www.a.org&apos;&gt;https://drive.google.com/drive/folders/1WliTTdy9TGyL9vs62rT4UmO5bYHCzjID?usp=sharing&lt;/a&gt;. Данная ссылка откроется после нажатия кнопки ОК.&lt;br/&gt;&lt;br/&gt;
-После успешного запуска сервера можете переходить к следующему шагу. Нажмите ОК и  выберите роль, о возможностях которой вы бы хотели узнать. Порядок изучения функционала приложения не играет большой роли.</translation>
+После успешного запуска сервера можете переходить к следующему шагу. Нажмите ОК и выберите роль, о возможностях которой вы бы хотели узнать. Порядок изучения функционала приложения не играет большой роли.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="88"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="89"/>
         <source>&lt;b&gt;Inspector&apos;s homepage&lt;/b&gt;&lt;br/&gt;
 Only on this page is reading and recognition of qr codes.&lt;br/&gt;
 -Now this page will automatically open when the application starts.&lt;br/&gt;
@@ -552,41 +553,41 @@ A console appears at the bottom of the screen that supports several commands tha
 3) [ping] - checks the connection to the server.&lt;br/&gt;
 4) [QR_code|Inspector_ID, new visit] - simulates sending qr code to the server on behalf of the specified inspector.&lt;br/&gt;
 5) [test] - sends a test request to the server. Gets a picture as an answer. Simulates the display of a photograph of a member and the reproduction of sound upon entry.&lt;br/&gt;</source>
-        <translation>&lt;b&gt;Главная страница инспектора. &lt;/b&gt;&lt;br/&gt;
+        <translation>&lt;b&gt;Главная страница валидатора. &lt;/b&gt;&lt;br/&gt;
 Только на этой странице происходит считывание qr кодов.&lt;br/&gt;
 -Теперь эта страница будет автоматически открываться при запуске приложения.&lt;br/&gt;
 -Частота кадров снижена для уменьшения потребления энергии, это не скажется значительно на скорости распознавания.&lt;br/&gt;&lt;br/&gt;
 После закрытия этого окна и нажатия на экран появятся четыре кнопки:&lt;br/&gt;
 Первая (кнопка с жуком) отвечает за бебаггинг. С его возможностями вы сможете ознакомиться в конце данной инструкции.&lt;br/&gt;&lt;br/&gt;
-Вторая (кнопка с шестернёй) - переход на страницу настроек инспектора и подключения к серверу.&lt;br/&gt;&lt;br/&gt;
+Вторая (кнопка с шестернёй) - переход на страницу настроек валидатора и подключения к серверу.&lt;br/&gt;&lt;br/&gt;
 Третья (кнопка с замком) - блокировка приложения. &lt;br/&gt;
-Для блокировки необходимо сначала задать пароль на странице настроек инспектора.&lt;br/&gt;
+Для блокировки необходимо сначала задать пароль на странице настроек валидатора.&lt;br/&gt;
 Во время блокировки нельзя переходить на другую страницу или изменять настройки приложения. Если вы вдруг забудете пароль, то придется переустанавливать приложение. &lt;br/&gt;
-Для удобства настройки в меню админа есть кнопка генерации qr кода для полной конфигурации инспектора. Дайте инспектору распознать сгенерированный qr код, остальное он сделает за вас.&lt;br/&gt;
-Решение, использовать ли одинаковый пароль для всех инспекторов, остаётся за вами.&lt;br/&gt;&lt;br/&gt;
-Четвертая (кнопка с камерой) переключает положение камеры на противоположное. Это единственная настройка, которую нельзя задать через конфигуратор инспектора в меню админа.&lt;br/&gt;&lt;br/&gt;
-Стоит подробнее рассказать об этапах проверки и учёта визита участника. После того, как участник поднес qr код к камере инспектора, последний проверяет, не был ли этот qr код уже распознан в ближайшее время. Настройка этой опции присутствует на странице настроек инспектора и по умолчанию равняется 10 секундам.&lt;br/&gt;
-Если qr код участника прошел первичную проверку, инспектор отправляет его на сервер вместе со своим ID (под ID инспектора подразумевается название кабинета, класса или любого другого помещения, в котором будет проходить событие и на входе в которое будет установлено устройство с ролью “инспектор”).&lt;br/&gt;
-После отправки информации на сервер, происходит проверка по существующему расписанию, и в случае успеха, на экране инспектора отображается фото профиля участника или стандартный для всех участников аватар. Также проигрывается звук входа, если он был задан в настройках инспектора.&lt;br/&gt;
+Для удобства настройки в меню админа есть кнопка генерации qr кода для полной конфигурации валидатора. Дайте валидатору распознать сгенерированный qr код, остальное он сделает за вас.&lt;br/&gt;
+Решение, использовать ли одинаковый пароль для всех валидаторов, остаётся за вами.&lt;br/&gt;&lt;br/&gt;
+Четвертая (кнопка с камерой) переключает положение камеры на противоположное. Это единственная настройка, которую нельзя задать через конфигуратор валидатора в меню админа.&lt;br/&gt;&lt;br/&gt;
+Стоит подробнее рассказать об этапах проверки и учёта визита участника. После того, как участник поднес qr код к камере валидатора, последний проверяет, не был ли этот qr код уже распознан в ближайшее время. Настройка этой опции присутствует на странице настроек валидатора и по умолчанию равняется 10 секундам.&lt;br/&gt;
+Если qr код участника прошел первичную проверку, валидатор отправляет его на сервер вместе со своим ID (под ID валидатора подразумевается название кабинета, класса или любого другого помещения, в котором будет проходить событие и на входе в которое будет установлено устройство с ролью “валидатор”).&lt;br/&gt;
+После отправки информации на сервер, происходит проверка по существующему расписанию, и в случае успеха, на экране валидатора отображается фото профиля участника или стандартный для всех участников аватар. Также проигрывается звук входа, если он был задан в настройках валидатора.&lt;br/&gt;
 Возможно возникновение следующих изображений вместо фото профиля:&lt;br/&gt;
 &lt;img src=&quot;qrc:/images/wrongpass.png&quot; width=&quot;100&quot; height=&quot;100&quot;/&gt;&lt;br/&gt;
-- введен неверный пароль сервера в настройках инспектора;&lt;br/&gt;
+- введен неверный пароль сервера в настройках валидатора;&lt;br/&gt;
 &lt;img src=&quot;qrc:/images/connecterror.png&quot; width=&quot;100&quot; height=&quot;100&quot;/&gt;&lt;br/&gt;
 - не удается подключиться к серверу (ошибка сети);&lt;br/&gt;
 &lt;img src=&quot;qrc:/images/accessdenied.png&quot; width=&quot;100&quot; height=&quot;100&quot;/&gt;&lt;br/&gt;
 - не пройдена первичная проверка или вход на событие запрещен (посещение не будет засчитано).&lt;br/&gt;&lt;br/&gt;
-Это все, что стоит знать о главной странице инспектора, можете перейти на страницу его настройки нажав на кнопку с шестерней в правом верхнем углу. Изначально она прозрачная.&lt;br/&gt;&lt;br/&gt;
+Это все, что стоит знать о главной странице валидатора, можете перейти на страницу его настройки нажав на кнопку с шестерней в правом верхнем углу. Изначально она прозрачная.&lt;br/&gt;&lt;br/&gt;
 Дополнительная информация о режиме дебаггинга:&lt;br/&gt;
 Если нажать на кнопку с жуком, то по центру экрана отобразится поле с информация о количестве считанных кодов, прошедших первичную проверку, а также тэг последнего из них.&lt;br/&gt;
 Внизу экрана появится консоль, поддерживающая несколько команд, которые использовались при разработке, но вам скорее всего не понадобятся.&lt;br/&gt;
-1) [reset] - ввод данной команды сбрасывает только настройки языка, гайда и стартовой страницы. Симулирует первое открытие приложения, не затирая настройки инспектора и админа.&lt;br/&gt;
+1) [reset] - ввод данной команды сбрасывает только настройки языка, гайда и стартовой страницы. Симулирует первое открытие приложения, не затирая настройки валидатора и админа.&lt;br/&gt;
 2) [close] - закрывает консоль, открыть ее снова можно только через кнопку с жуком.&lt;br/&gt;
 3) [ping] - проверяет подключение к серверу.&lt;br/&gt;
-4) [QR_code|Inspector_ID, new visit] - симулирует отправку qr кода на сервер от лица указанного инспектора.&lt;br/&gt;
+4) [QR_code|Inspector_ID, new visit] - симулирует отправку qr кода на сервер от лица указанного валидатора.&lt;br/&gt;
 5) [test] - отправляет пробный запрос на сервер. В качестве ответа получает картинку. Симулирует отображение фотографии участника и воспроизведение звука при входе.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="122"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="123"/>
         <source>&lt;b&gt;Inspector settings page&lt;/b&gt;&lt;br/&gt;
 To successfully connect the inspector to the server, you need to enter the IP, port and password of the server, which you already know if you started the server and followed the instructions in the readme.txt file.&lt;br/&gt;
 Recall that to configure the inspector, it is enough to bring the qr code generated by the administrator.&lt;br/&gt;&lt;br/&gt;
@@ -602,13 +603,13 @@ You can learn more about setting up a server to access it from the global networ
 8) Change role - returns to the main screen for subsequent role selection.&lt;br/&gt;&lt;br/&gt;
 The button next to the server password field allows you to check the connection to the server. Click on it and if it turns green, then the connection has been successfully established and the server is currently available. In the opposite case, an inscription with an error will appear below it.&lt;br/&gt;&lt;br/&gt;
 Fill in the IP, port and server password fields. Check if the inspector can connect to the server. After that, you can familiarize yourself with the “Administrator” role by clicking on “Change role”.</source>
-        <translation>&lt;b&gt;Настройки инспектора&lt;/b&gt;&lt;br/&gt;
-Для успешного подключения инспектора к серверу надо ввести IP, порт и пароль сервера, которые вы уже знаете, если запустили сервер и следовали инструкциям файла readme.txt. &lt;br/&gt;
-Напомним, что для настройки инспектора достаточно поднести qr код, сгенерированный администратором.&lt;br/&gt;&lt;br/&gt;
+        <translation>&lt;b&gt;Настройки валидатора&lt;/b&gt;&lt;br/&gt;
+Для успешного подключения валидатора к серверу надо ввести IP, порт и пароль сервера, которые вы уже знаете, если запустили сервер и следовали инструкциям файла readme.txt. &lt;br/&gt;
+Напомним, что для настройки валидатора достаточно поднести qr код, сгенерированный администратором.&lt;br/&gt;&lt;br/&gt;
 Перечислим по порядку за что отвечают поля ввода текущей страницы:&lt;br/&gt;
-1) ID инспектора – необязательно уникальное название точки, где расположен инспектор. Если у двух инспекторов одинаковый ID, то они будут дополнять друг друга, как если бы в помещение существовало два входа.&lt;br/&gt;
-2) Пауза повт. уч. – задержка между повторной отправкой запроса на добавление посещения участнику. Крайне нежелательно оставлять это значение очень маленьким во избежание слишком частого опроса сервера инспекторами и высокой нагрузки на него.&lt;br/&gt;
-3) Пароль прилож. – пароль для разблокировки инспектора. Без него, любой сможет изменить настройки по своему усмотрению.&lt;br/&gt;
+1) ID валидатора – необязательно уникальное название точки, где расположен валидатор. Если у двух валидаторов одинаковый ID, то они будут дополнять друг друга, как если бы в помещение существовало два входа.&lt;br/&gt;
+2) Пауза повт. уч. – задержка между повторной отправкой запроса на добавление посещения участнику. Крайне нежелательно оставлять это значение очень маленьким во избежание слишком частого опроса сервера валидаторами и высокой нагрузки на него.&lt;br/&gt;
+3) Пароль прилож. – пароль для разблокировки валидатора. Без него, любой сможет изменить настройки по своему усмотрению.&lt;br/&gt;
 4) IP сервера – IP сервера в локальной или глобальной сети. Проще всего настроить сервер для работы в локальной сети (например устройства подключены к одной точке WiFi).&lt;br/&gt;
 О настройке сервера для доступа к нему из глобальной сети вы можете узнать больше в интернете.&lt;br/&gt;
 5) Порт сервера – порт, на котором запущено серверное приложение QRInspector.&lt;br/&gt;
@@ -616,10 +617,10 @@ Fill in the IP, port and server password fields. Check if the inspector can conn
 7) Звук входа – звук, который будет воспроизводиться после успешного учета посещения участником.&lt;br/&gt;
 8) Сменить роль – возвращает на главный экран для последующего выбора роли.&lt;br/&gt;
 Кнопка рядом с полем пароля сервера позволяет проверить соединение с сервером. Нажмите на нее и если она загорится зеленым, значит подключение успешно установлено и сервер в данный момент доступен. В противоположном случае под ней отобразится надпись с возникшей ошибкой.&lt;br/&gt;&lt;br/&gt;
-Заполните поля IP, порт и пароль сервера. Проверьте, может ли инспектор подключиться к серверу. После этого можете ознакомиться с ролью “Администратор” нажав на “Сменить роль”.</translation>
+Заполните поля IP, порт и пароль сервера. Проверьте, может ли валидатор подключиться к серверу. После этого можете ознакомиться с ролью “Администратор” нажав на “Сменить роль”.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="186"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="187"/>
         <source>&lt;b&gt;Members Table&lt;/b&gt;&lt;br/&gt;
 This table displays all existing members. To search in the table and filter the search result, click on the button with the funnel in the upper right corner.&lt;br/&gt;
 Double-click on the member you are interested in to open his profile. In the window that appears, you can open the profiles of the group in which he is a member and the events to which he is invited. To edit the profile, click on the button with a pencil in the upper right corner.</source>
@@ -628,7 +629,7 @@ Double-click on the member you are interested in to open his profile. In the win
 Нажмите дважды на интересующего вас участника чтобы открыть его профиль. В появившемся окне вы можете открывать профили группы, в которых он состоит и событий, на которые приглашен. Для редактирования профиля нажмите на кнопку с карандашом в правом верхнем углу.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="192"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="193"/>
         <source>&lt;b&gt;Group table&lt;/b&gt;&lt;br/&gt;
 This table displays all existing groups. To search in the table and filter the search result, click on the button with the funnel in the upper right corner.&lt;br/&gt;
 Double-click on a group of interest to open its profile. In the window that appears, you can open the profiles of members in the group and events to which the group is invited. To edit the profile, click on the button with a pencil in the upper right corner.</source>
@@ -637,7 +638,7 @@ Double-click on a group of interest to open its profile. In the window that appe
 Нажмите дважды на интересующую вас группу чтобы открыть ее профиль. В появившемся окне вы можете открывать профили участников, состоящих в группе, и событий, на которые приглашена группа. Для редактирования профиля нажмите на кнопку с карандашом в правом верхнем углу.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="198"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="199"/>
         <source>&lt;b&gt;Event table&lt;/b&gt;&lt;br/&gt;
 This table displays all existing events. To search in the table and filter the search result, click on the button with the funnel in the upper right corner. When entering date and time values, strictly adhere to the format indicated on the background of the input field.&lt;br/&gt;
 Double-click on the event you are interested in to open its profile. In the window that appears, you can open profiles of members and groups invited to the event. To edit the profile, click on the button with a pencil in the upper right corner.</source>
@@ -646,14 +647,14 @@ Double-click on the event you are interested in to open its profile. In the wind
 Нажмите дважды на интересующее вас событие чтобы открыть его профиль. В появившемся окне вы можете открывать профили участников и групп, приглашенных на событие. Для редактирования профиля нажмите на кнопку с карандашом в правом верхнем углу.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="204"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="205"/>
         <source>&lt;b&gt;Visits table&lt;/b&gt;&lt;br/&gt;
 This table displays all registered visits. To search in the table and filter the search result, click on the button with the funnel in the upper right corner. When entering date and time values, strictly adhere to the format indicated on the background of the input field.</source>
         <translation>&lt;b&gt;Таблица посещений&lt;/b&gt;&lt;br/&gt;
 В данной таблице отображаются все зарегистрированные посещения. Для поиска в таблице и фильтрации результата поиска нажмите на кнопку с воронкой в правом верхнем углу. При вводе значений даты и времени строго придерживайтесь формата, указанного на фоне поля ввода.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="210"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="211"/>
         <source>&lt;b&gt;Superuser Menu&lt;/b&gt;&lt;br/&gt;
 This menu provides additional opportunities for working with the database.&lt;br/&gt;&lt;br/&gt;
 - full cleanup of the current database&lt;br/&gt;
@@ -682,12 +683,12 @@ Enter the superuser password that you specified in the server configuration file
 Введите пароль суперпользователя, который вы указали в конфигурационном файле сервера для получения доступа к ним.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="224"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="225"/>
         <source>Guide</source>
         <translation>Руководство</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="326"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="341"/>
         <source>Skip guide</source>
         <translation>Пропустить</translation>
     </message>
@@ -702,7 +703,7 @@ Enter the superuser password that you specified in the server configuration file
     <message>
         <location filename="../ClientSettingsPage.qml" line="53"/>
         <source>Inspector ID</source>
-        <translation>ID инспектора</translation>
+        <translation>ID валидатора</translation>
     </message>
     <message>
         <location filename="../ClientSettingsPage.qml" line="62"/>
@@ -773,106 +774,111 @@ Enter the superuser password that you specified in the server configuration file
         <translation>Изменение события</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="133"/>
+        <location filename="../DBAddEventPage.qml" line="134"/>
         <source>Title</source>
         <translation>Название</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="138"/>
+        <location filename="../DBAddEventPage.qml" line="139"/>
         <source>Inspector ID</source>
-        <translation>ID инспектора</translation>
+        <translation>ID валидатора</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="145"/>
+        <location filename="../DBAddEventPage.qml" line="146"/>
         <source>Start time</source>
         <translation>Время начала</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="154"/>
+        <location filename="../DBAddEventPage.qml" line="155"/>
         <source>End time</source>
         <translation>Время конца</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="163"/>
+        <location filename="../DBAddEventPage.qml" line="164"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="252"/>
+        <location filename="../DBAddEventPage.qml" line="253"/>
         <source>Group</source>
         <translation>Группа</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="253"/>
+        <location filename="../DBAddEventPage.qml" line="254"/>
         <source>Invited groups:</source>
         <translation>Приглашенные группы:</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="275"/>
+        <location filename="../DBAddEventPage.qml" line="276"/>
         <source>Member</source>
         <translation>Участник</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="276"/>
+        <location filename="../DBAddEventPage.qml" line="277"/>
         <source>Invited members:</source>
         <translation>Приглашенные участники:</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="301"/>
+        <location filename="../DBAddEventPage.qml" line="302"/>
         <source>Delete event</source>
         <translation>Удалить событие</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="339"/>
-        <location filename="../DBAddEventPage.qml" line="412"/>
+        <location filename="../DBAddEventPage.qml" line="342"/>
+        <location filename="../DBAddEventPage.qml" line="356"/>
+        <location filename="../DBAddEventPage.qml" line="429"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="344"/>
+        <location filename="../DBAddEventPage.qml" line="347"/>
+        <source>Create/change a event?</source>
+        <translation>Создать/изменить событие?</translation>
+    </message>
+    <message>
+        <location filename="../DBAddEventPage.qml" line="361"/>
         <source>Deleting a (</source>
         <translation>Удаление события</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="344"/>
+        <location filename="../DBAddEventPage.qml" line="361"/>
         <source>) event will &lt;b&gt;delete all found related data&lt;/b&gt;!</source>
         <translation>приведет к &lt;b&gt;удалению всей связанной информации&lt;/b&gt;!</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="353"/>
-        <location filename="../DBAddEventPage.qml" line="382"/>
+        <location filename="../DBAddEventPage.qml" line="399"/>
         <source>Info</source>
         <translation>Инфо</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="369"/>
-        <location filename="../DBAddEventPage.qml" line="399"/>
-        <location filename="../DBAddEventPage.qml" line="426"/>
+        <location filename="../DBAddEventPage.qml" line="386"/>
+        <location filename="../DBAddEventPage.qml" line="416"/>
+        <location filename="../DBAddEventPage.qml" line="443"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="374"/>
+        <location filename="../DBAddEventPage.qml" line="391"/>
         <source>Database &lt;b&gt;error&lt;/b&gt;! Event was not added.</source>
         <translation>&lt;b&gt;Ошибка&lt;/b&gt; базы данных! Событие не было добавлено.</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="387"/>
+        <location filename="../DBAddEventPage.qml" line="404"/>
         <source>Operation completed &lt;b&gt;successfully&lt;/b&gt;.</source>
         <translation>Операция завершилась &lt;b&gt;успешно&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="404"/>
+        <location filename="../DBAddEventPage.qml" line="421"/>
         <source>Network connection &lt;b&gt;error&lt;/b&gt;! Event was not added.</source>
         <translation>&lt;b&gt;Ошибка&lt;/b&gt; сетевого соединения! Событие не добавлено.</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="417"/>
+        <location filename="../DBAddEventPage.qml" line="434"/>
         <source>No groups or members added. No one will be invited to a new event.</source>
         <translation>Не выбрано ни одного участника или группы. Никто не будет приглашен на событие.</translation>
     </message>
     <message>
-        <location filename="../DBAddEventPage.qml" line="431"/>
+        <location filename="../DBAddEventPage.qml" line="448"/>
         <source>The field is empty or incorrect data is entered. Сheck the input is correct!</source>
         <translation>Поле пусто или введены некорректные данные. Проверьте правильность ввода!</translation>
     </message>
@@ -890,91 +896,95 @@ Enter the superuser password that you specified in the server configuration file
         <translation>Изменение группы</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="100"/>
+        <location filename="../DBAddGroupPage.qml" line="101"/>
         <source>Title</source>
         <translation>Название</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="105"/>
+        <location filename="../DBAddGroupPage.qml" line="106"/>
         <source>Member</source>
         <translation>Участник</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="106"/>
+        <location filename="../DBAddGroupPage.qml" line="107"/>
         <source>Group members:</source>
         <translation>Участники группы:</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="132"/>
+        <location filename="../DBAddGroupPage.qml" line="133"/>
         <source>Event</source>
         <translation>Событие</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="133"/>
+        <location filename="../DBAddGroupPage.qml" line="134"/>
         <source>Group events:</source>
         <translation>События группы:</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="155"/>
+        <location filename="../DBAddGroupPage.qml" line="156"/>
         <source>Delete group</source>
         <translation>Удалить группу</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="192"/>
-        <location filename="../DBAddGroupPage.qml" line="277"/>
+        <location filename="../DBAddGroupPage.qml" line="201"/>
+        <source>Create/change a group?</source>
+        <translation>Создать/изменить группу?</translation>
+    </message>
+    <message>
+        <location filename="../DBAddGroupPage.qml" line="295"/>
         <source>Info</source>
         <translation>Инфо</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="197"/>
         <source>Group &lt;b&gt;successfully&lt;/b&gt; created. Do you want to &lt;b&gt;edit&lt;/b&gt; created group?</source>
-        <translation>Группа &lt;b&gt;успешно&lt;/b&gt; создана. Хотите &lt;b&gt;изменить&lt;/b&gt; созданную группу?</translation>
+        <translation type="vanished">Группа &lt;b&gt;успешно&lt;/b&gt; создана. Хотите &lt;b&gt;изменить&lt;/b&gt; созданную группу?</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="209"/>
-        <location filename="../DBAddGroupPage.qml" line="222"/>
-        <location filename="../DBAddGroupPage.qml" line="249"/>
+        <location filename="../DBAddGroupPage.qml" line="227"/>
+        <location filename="../DBAddGroupPage.qml" line="240"/>
+        <location filename="../DBAddGroupPage.qml" line="267"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="214"/>
+        <location filename="../DBAddGroupPage.qml" line="232"/>
         <source>Database &lt;b&gt;error&lt;/b&gt;! Group was not added.</source>
         <translation>&lt;b&gt;Ошибка&lt;/b&gt; базы данных! Группа не добавлена.</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="227"/>
+        <location filename="../DBAddGroupPage.qml" line="245"/>
         <source>Network connection &lt;b&gt;error&lt;/b&gt;! Member was not added.</source>
         <translation>&lt;b&gt;Ошибка&lt;/b&gt; сетевого соединения! Группа не добавлена.</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="235"/>
-        <location filename="../DBAddGroupPage.qml" line="263"/>
+        <location filename="../DBAddGroupPage.qml" line="196"/>
+        <location filename="../DBAddGroupPage.qml" line="253"/>
+        <location filename="../DBAddGroupPage.qml" line="281"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="240"/>
+        <location filename="../DBAddGroupPage.qml" line="258"/>
         <source>No members and events added. The group will be created without members and access to events.</source>
         <translation>Не выбрано ни одного участника или события. Группа будет создана без участников и приглашений на события.</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="254"/>
+        <location filename="../DBAddGroupPage.qml" line="272"/>
         <source>The field is empty or incorrect data is entered. Сheck the input is correct!</source>
         <translation>Поле пусто или введены некорректные данные. Проверьте правильность ввода!</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="268"/>
+        <location filename="../DBAddGroupPage.qml" line="286"/>
         <source>Deleting a (</source>
         <translation>Удаление группы (</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="268"/>
+        <location filename="../DBAddGroupPage.qml" line="286"/>
         <source>) group will delete all found related data!</source>
         <translation>) приведет к удалению всех связанных данных!</translation>
     </message>
     <message>
-        <location filename="../DBAddGroupPage.qml" line="282"/>
+        <location filename="../DBAddGroupPage.qml" line="300"/>
         <source>Operation completed &lt;b&gt;successfully&lt;/b&gt;.</source>
         <translation>Операция завершилась &lt;b&gt;успешно&lt;/b&gt;.</translation>
     </message>
@@ -982,70 +992,72 @@ Enter the superuser password that you specified in the server configuration file
 <context>
     <name>DBAddMemberPage</name>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="38"/>
+        <location filename="../DBAddMemberPage.qml" line="59"/>
         <source>Add Member</source>
         <translation>Добавление участника</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="38"/>
+        <location filename="../DBAddMemberPage.qml" line="59"/>
         <source>Edit Member</source>
         <translation>Изменение участника</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="396"/>
-        <location filename="../DBAddMemberPage.qml" line="421"/>
+        <location filename="../DBAddMemberPage.qml" line="556"/>
         <source>Info</source>
         <translation>Инфо</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="401"/>
         <source>Member &lt;b&gt;successfully&lt;/b&gt; created</source>
-        <translation>Профиль участника &lt;b&gt;успешно&lt;/b&gt; создан</translation>
+        <translation type="vanished">Профиль участника &lt;b&gt;успешно&lt;/b&gt; создан</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="401"/>
         <source> &lt;b&gt;without any group access&lt;/b&gt;</source>
-        <translation> &lt;b&gt;без принадлежности к какой-либо группе&lt;b&gt;</translation>
+        <translation type="vanished"> &lt;b&gt;без принадлежности к какой-либо группе&lt;b&gt;</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="401"/>
         <source>. Do you want to &lt;b&gt;edit&lt;/b&gt; created member?</source>
-        <translation>. Хотите &lt;b&gt;изменить&lt;/b&gt; созданный профиль?</translation>
+        <translation type="vanished">. Хотите &lt;b&gt;изменить&lt;/b&gt; созданный профиль?</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="426"/>
+        <location filename="../DBAddMemberPage.qml" line="561"/>
         <source>Operation completed &lt;b&gt;successfully&lt;/b&gt;.</source>
         <translation>Операция завершилась &lt;b&gt;успешно&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="439"/>
+        <location filename="../DBAddMemberPage.qml" line="514"/>
+        <location filename="../DBAddMemberPage.qml" line="577"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="444"/>
+        <location filename="../DBAddMemberPage.qml" line="519"/>
+        <source>Create/change a member?</source>
+        <translation>Создать/изменить профиль участника?</translation>
+    </message>
+    <message>
+        <location filename="../DBAddMemberPage.qml" line="582"/>
         <source>Deleting a member will &lt;b&gt;delete all found related data&lt;/b&gt;!</source>
         <translation>Удаление профиля участника приведет к &lt;b&gt;удалению всей связанной информации&lt;/b&gt;!</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="453"/>
-        <location filename="../DBAddMemberPage.qml" line="466"/>
-        <location filename="../DBAddMemberPage.qml" line="479"/>
+        <location filename="../DBAddMemberPage.qml" line="595"/>
+        <location filename="../DBAddMemberPage.qml" line="608"/>
+        <location filename="../DBAddMemberPage.qml" line="621"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="458"/>
+        <location filename="../DBAddMemberPage.qml" line="600"/>
         <source>Enter member name and surname at least!</source>
         <translation>Введите хотя бы имя и фамилию участника!</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="471"/>
+        <location filename="../DBAddMemberPage.qml" line="613"/>
         <source>Database &lt;b&gt;error&lt;/b&gt;! Member was not added.</source>
         <translation>&lt;b&gt;Ошибка&lt;/b&gt; базы данных! Профиль участника не был добавлен.</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="484"/>
+        <location filename="../DBAddMemberPage.qml" line="626"/>
         <source>Network connection &lt;b&gt;error&lt;/b&gt;! Member was not added/edited.</source>
         <translation>&lt;b&gt;Ошибка&lt;/b&gt; сетевого соединения! Профиль участника не добавлен/изменен.</translation>
     </message>
@@ -1054,47 +1066,47 @@ Enter the superuser password that you specified in the server configuration file
         <translation type="vanished">&lt;b&gt;Ошибка&lt;/b&gt; сетевого соединения! Профиль участника не добавлен.</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="130"/>
+        <location filename="../DBAddMemberPage.qml" line="157"/>
         <source>Name*</source>
         <translation>Имя*</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="137"/>
+        <location filename="../DBAddMemberPage.qml" line="164"/>
         <source>Surname*</source>
         <translation>Фамилия*</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="143"/>
+        <location filename="../DBAddMemberPage.qml" line="170"/>
         <source>Patronymic</source>
         <translation>Отчество</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="148"/>
+        <location filename="../DBAddMemberPage.qml" line="175"/>
         <source>Group</source>
         <translation>Группа</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="149"/>
+        <location filename="../DBAddMemberPage.qml" line="176"/>
         <source>Member groups:</source>
         <translation>Группы участника:</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="180"/>
+        <location filename="../DBAddMemberPage.qml" line="207"/>
         <source>Event</source>
         <translation>Событие</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="181"/>
+        <location filename="../DBAddMemberPage.qml" line="208"/>
         <source>Member events:</source>
         <translation>События участника:</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="204"/>
+        <location filename="../DBAddMemberPage.qml" line="231"/>
         <source>Avatar:</source>
         <translation>Аватар:</translation>
     </message>
     <message>
-        <location filename="../DBAddMemberPage.qml" line="288"/>
+        <location filename="../DBAddMemberPage.qml" line="388"/>
         <source>Delete member</source>
         <translation>Удалить участника</translation>
     </message>
@@ -1171,17 +1183,17 @@ Enter the superuser password that you specified in the server configuration file
 <context>
     <name>DBMemberProfile</name>
     <message>
-        <location filename="../qml/myTemplates/DBMemberProfile.qml" line="40"/>
+        <location filename="../qml/myTemplates/DBMemberProfile.qml" line="42"/>
         <source>Profile #</source>
         <translation>Профиль #</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/DBMemberProfile.qml" line="150"/>
+        <location filename="../qml/myTemplates/DBMemberProfile.qml" line="153"/>
         <source>Member groups: </source>
         <translation>Группы участника:</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/DBMemberProfile.qml" line="220"/>
+        <location filename="../qml/myTemplates/DBMemberProfile.qml" line="223"/>
         <source>Member events: </source>
         <translation>События участника:</translation>
     </message>
@@ -1230,18 +1242,30 @@ Enter the superuser password that you specified in the server configuration file
     </message>
     <message>
         <location filename="../DBSettingsPage.qml" line="102"/>
-        <source> Members table</source>
-        <translation> Таблица участников</translation>
+        <source> Members</source>
+        <translation> Участники</translation>
     </message>
     <message>
         <location filename="../DBSettingsPage.qml" line="109"/>
-        <source> Groups table</source>
-        <translation> Таблица групп</translation>
+        <source> Groups</source>
+        <translation> Группы</translation>
     </message>
     <message>
         <location filename="../DBSettingsPage.qml" line="115"/>
+        <source> Events</source>
+        <translation> События</translation>
+    </message>
+    <message>
+        <source> Members table</source>
+        <translation type="vanished"> Таблица участников</translation>
+    </message>
+    <message>
+        <source> Groups table</source>
+        <translation type="vanished"> Таблица групп</translation>
+    </message>
+    <message>
         <source> Events table</source>
-        <translation> Таблица событий</translation>
+        <translation type="vanished"> Таблица событий</translation>
     </message>
     <message>
         <location filename="../DBSettingsPage.qml" line="125"/>
@@ -1465,39 +1489,47 @@ Enter the superuser password that you specified in the server configuration file
         <translation>Дни</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="56"/>
+        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="57"/>
         <source>Mon</source>
         <translation>ПН</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="77"/>
+        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="78"/>
         <source>Tue</source>
         <translation>ВТ</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="98"/>
+        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="99"/>
         <source>Wed</source>
         <translation>СР</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="119"/>
+        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="120"/>
         <source>Thu</source>
         <translation>ЧТ</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="140"/>
+        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="141"/>
         <source>Fri</source>
         <translation>ПТ</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="162"/>
+        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="163"/>
         <source>Sat</source>
         <translation>СБ</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="189"/>
+        <location filename="../qml/myTemplates/DaysOfWeekBox.qml" line="190"/>
         <source>Sun</source>
         <translation>ВС</translation>
+    </message>
+</context>
+<context>
+    <name>ProfileCameraPage</name>
+    <message>
+        <location filename="../ProfileCameraPage.qml" line="88"/>
+        <source>Click to select</source>
+        <translation>Нажмите для выбора</translation>
     </message>
 </context>
 <context>
@@ -1516,7 +1548,7 @@ Enter the superuser password that you specified in the server configuration file
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="353"/>
+        <location filename="../main.qml" line="354"/>
         <source>password</source>
         <translation>пароль</translation>
     </message>

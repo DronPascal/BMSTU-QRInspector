@@ -382,8 +382,8 @@ QString QZXingFilterRunnable::decode(const QImage &image)
     if (filter != ZXING_NULLPTR)
     {
         decodedStr = filter->decoder.decodeImage((filter->mirroring) ?
-                                                     (image.height()>700 ? image.mirrored().scaledToHeight(480) : image.mirrored()) :
-                                                     (image.height()>700 ? image.scaledToHeight(480) : image));
+                                                     (image.height()>700 ? image.mirrored().scaledToHeight(700) : image.mirrored()) :
+                                                     (image.height()>700 ? image.scaledToHeight(700) : image));
     return decodedStr;
     }
     else return QString();

@@ -99,20 +99,20 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
             My.NextButton {
-                text: qsTr(" Members table")+mytrans.emptyString
+                text: qsTr(" Members")+mytrans.emptyString
                 imageSource: "../images/forward.png"
                 fontsize: fontSize
                 topline: true
                 mousearea.onClicked: checkdbAndPush("DBTableMembersPage.qml");
             }
             My.NextButton {
-                text: qsTr(" Groups table")+mytrans.emptyString
+                text: qsTr(" Groups")+mytrans.emptyString
                 imageSource: "../images/forward.png"
                 fontsize: fontSize
                 mousearea.onClicked: checkdbAndPush("DBTableGroupsPage.qml");
             }
             My.NextButton {
-                text: qsTr(" Events table")+mytrans.emptyString
+                text: qsTr(" Events")+mytrans.emptyString
                 imageSource: "../images/forward.png"
                 fontsize: fontSize
                 mousearea.onClicked: checkdbAndPush("DBTableEventsPage.qml");

@@ -49,6 +49,7 @@ Item {
         guidesettings.dbtablevisitspage=0
 
         guidesettings.dbsudosettingspage=0
+        row.visible=true
     }
     function registerGuide(page) {
         if (page==="Start Page") guidesettings.startpage=1
@@ -234,8 +235,9 @@ Enter the superuser password that you specified in the server configuration file
             height: parent.height
             width: parent.width
             Row {
+                id: row
                 width: flickable.width
-                visible: globalSettings.lang==="" && item.curpage==="Start Page"
+                visible: item.curpage==="Start Page"
                 Text {
                     id: langlabel
                     text: "Choose lanuage"
@@ -260,7 +262,18 @@ Enter the superuser password that you specified in the server configuration file
                     font.pixelSize: fontsize
                     clip: true
                     model: ["English", "Russian"]
-                    //onCurrentValueChanged:  globalSettings.lang=langbox.currentValue
+                    onCurrentValueChanged: {
+                        globalSettings.lang=langbox.currentText
+                        label.text= qsTr("It is strongly recommended that you <b>read this</b> comprehensive guide, which describes all the features of the presented product and the steps to configure it.<br/><br/>
+The application was developed and released by students of the BMSTU FN11 faculty: Pascal A.P., Shibanov A.O., Kadiev A. Lecturer - Gumirgaliev T.R.<br/><br/>
+This client-server application is a working solution for recording visits to \"events\" by company members using QR codes for identification. By \"events\" we mean meetings, classes, and any other kind of meeting, timed to a specific place and time. A recognition device must correspond to each such place, for the description of which we have chosen the word \"inspector\" and we will adhere to this definition in further instructions.<br/><br/>
+This application allows you to choose one of two roles: Inspector and Administrator.<br/><br/>
+-A device with the Inspector role, after setting up and connecting to the QRInspector server application, as described above, will read QR codes that members will display in front of its camera. Only after successful recognition of the QR code and verification on the server, the member will be credited with a visit.<br/><br/>
+-A device with the role of \"Administrator\" after connecting to the QRInspector server application, will provide the user with the ability to create and modify profiles of members, groups and events.<br/><br/>
+Any authorization and accounting of visits occur through the server application. Therefore, it is important to complete the first step:<br/>
+1) Download the QRInspector server application for Linux x64 or Windows x64 / x86, configure and run it. Follow the instructions in the \"readme.txt\" file in the folder of the downloaded application. You can download any version of the server just clicked on <a href='http://www.a.org'>https://drive.google.com/drive/folders/1WliTTdy9TGyL9vs62rT4UmO5bYHCzjID?usp=sharing</a>. This link will open after using the OK button.<br/><br/>
+After the server starts successfully, you can proceed to the next step. Click OK and select the role that you would like to know about the features. The order of studying the functionality of the application does not play a big role.")+mytrans.emptyString
+                    }
                 }
                 Rectangle {
                     id: accrect
@@ -279,6 +292,7 @@ Enter the superuser password that you specified in the server configuration file
                         onClicked: {
                             globalSettings.lang=langbox.currentText
                             label.text= qsTr("It is strongly recommended that you <b>read this</b> comprehensive guide, which describes all the features of the presented product and the steps to configure it.<br/><br/>
+The application was developed and released by students of the BMSTU FN11 faculty: Pascal A.P., Shibanov A.O., Kadiev A. Lecturer - Gumirgaliev T.R.<br/><br/>
 This client-server application is a working solution for recording visits to \"events\" by company members using QR codes for identification. By \"events\" we mean meetings, classes, and any other kind of meeting, timed to a specific place and time. A recognition device must correspond to each such place, for the description of which we have chosen the word \"inspector\" and we will adhere to this definition in further instructions.<br/><br/>
 This application allows you to choose one of two roles: Inspector and Administrator.<br/><br/>
 -A device with the Inspector role, after setting up and connecting to the QRInspector server application, as described above, will read QR codes that members will display in front of its camera. Only after successful recognition of the QR code and verification on the server, the member will be credited with a visit.<br/><br/>
@@ -286,6 +300,7 @@ This application allows you to choose one of two roles: Inspector and Administra
 Any authorization and accounting of visits occur through the server application. Therefore, it is important to complete the first step:<br/>
 1) Download the QRInspector server application for Linux x64 or Windows x64 / x86, configure and run it. Follow the instructions in the \"readme.txt\" file in the folder of the downloaded application. You can download any version of the server just clicked on <a href='http://www.a.org'>https://drive.google.com/drive/folders/1WliTTdy9TGyL9vs62rT4UmO5bYHCzjID?usp=sharing</a>. This link will open after using the OK button.<br/><br/>
 After the server starts successfully, you can proceed to the next step. Click OK and select the role that you would like to know about the features. The order of studying the functionality of the application does not play a big role.")+mytrans.emptyString
+                        row.visible=false
                         }
                     }
                 }

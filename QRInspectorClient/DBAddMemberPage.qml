@@ -21,11 +21,32 @@ Page {
     property bool nogroups: false
     property string oldphotosave: ""
 
+    property bool hasphoto: false
+    property int id: 0
+    onHasphotoChanged:{
+        console.log("hasphoto====="+page.hasphoto)
+        //newphoto.rotat=0
+        if (page.hasphoto)
+        {
+            console.log("serverImgProvider")
+            photopreview="image://serverImgProvider/"+id++;
+            newphoto.source= "image://serverImgProvider/"+id++;
+            photosave=""
+        }
+        else
+        {
+            newphoto.source="../images/new_photo.png"
+            photopreview=""
+            photosave=""
+        }
+    }
+
     function setphotosource(src){
         if (src!=="")
         {
+            //newphoto.source="none"
             newphoto.source=src
-            previewph.text=src
+            //newphoto.update()
         }
     }
 
@@ -52,10 +73,12 @@ Page {
                     page.nogroups=false
                 else
                     page.nogroups=true
-                addToDatabase()
+                //addToDatabase()
+                createNewProfileDialog.open()
             }
             else
-                addToDatabase()
+                //addToDatabase()
+                createNewProfileDialog.open()
         }
         else {
             nameNotSelectedDialog.open()
@@ -93,13 +116,17 @@ Page {
             }
 
         sqlhandler.sendGetQuery(query);
-        if (newphoto.source!=="../images/new_photo.png")
+        if (photosave!="")
         {
-            imgSend.sendImage(qrcode, photosave)
-            photopreview=""
+            imgSend.sendImage(qrcode, photosave, newphoto.rotat)
+            //photopreview=""
             oldphotosave=photosave
             photosave=""
         }
+        else if (photopreview=="" && page.editMember!="")
+            removephotoclient.sendGet(page.editMember, "delete photo")
+        newphoto.rotat=0
+
         //        imgSend.sendImage(page.editMember!=""?page.editMember:page.memberqr,
         //                          (men.border.width==0 && women.border.width==0) ? "" : (men.border.width!=0?":/images/men.png": ":/images/women.png") )
     }
@@ -249,40 +276,113 @@ Page {
                 //                        }
                 //                    }
                 //                }
-                Image {
-                    id: newphoto
-                    source: "../images/new_photo.png"
-                    width: Math.min(page.width,page.height)/4
-                    height: width
-                    sourceSize.height: width
-                    sourceSize.width: width
+                Rectangle {
+                    id: photorect
+                    color: "transparent"
                     anchors.horizontalCenter: parent.horizontalCenter
-                    fillMode: Image.PreserveAspectCrop
-                    MouseArea {
-                        id: newphotoma
-                        anchors.fill: parent
-                        onClicked: stackView.push("ProfileCameraPage.qml")
-                    }
-                    onSourceChanged: photopreview=="" ? newphotoma.enabled=true : newphotoma.enabled=false
+                    width: Math.min(page.width,page.height)*(photopreview==""? 0.25: 0.8)
+                    height: width
                     Image {
-                        visible: photopreview!=""
-                        id: closephoto
-                        source: "../images/closephoto.png"
-                        width: parent.width/8
-                        height: width
+                        id: newphoto
+                        property int rotat: 0
+                        cache: false
+                        anchors.fill: parent
+                        source: "../images/new_photo.png"
                         sourceSize.height: width
                         sourceSize.width: width
-                        anchors.top: parent.top
-                        anchors.right: parent.right
+                        fillMode: Image.PreserveAspectCrop
+                        rotation: rotat*90
                         MouseArea {
-                            anchors.fill:parent
-                            onClicked: {
-                                photopreview=""
-                                newphoto.source="../images/new_photo.png"
+                            id: newphotoma
+                            enabled: photopreview==""
+                            anchors.fill: parent
+                            onClicked: stackView.push("ProfileCameraPage.qml")
+                        }
+                        Rectangle {
+                            visible: photosave!=""
+                            anchors.fill: parent
+                            color: "transparent"
+                            border.color: "#dbdbdb"
+                            border.width: 3
+                        }
+                    }
+
+                    Rectangle {
+                        id: underimgrect
+                        width: newphoto.width
+                        height: newphoto.height/7
+                        visible: photopreview!==""
+                        color: "white"
+                        opacity: 0.6
+                        border.color: "#cccccc"
+                        border.width: 3
+                        anchors.bottom: photorect.bottom
+                        Rectangle {
+                            id: closephotobut
+                            width: photosave!=="" ? parent.width/2 : parent.width
+                            height: parent.height
+                            anchors.left: parent.left
+                            color: "pink"
+                            Image{
+                                anchors.centerIn: parent
+                                height: parent.height*0.7
+                                width: height
+                                sourceSize.width: height
+                                sourceSize.height: height
+                                source: "../images/delete.png"
                             }
+                            MouseArea {
+                                anchors.fill:parent
+                                onClicked: {
+                                    newphoto.rotat=0
+                                    console.log("STATUS="+page.hasphoto)
+                                    if (page.hasphoto)
+                                    {
+                                        page.hasphoto=false
+                                        console.log("HAS PHOTO NOW False")
+                                    }
+                                    else
+                                    {
+                                        newphoto.source="../images/new_photo.png"
+                                        photopreview=""
+                                        photosave=""
+                                    }
+                                }
+                            }
+                        }
+                        Rectangle {
+                            id: rotatephotobut
+                            visible: photosave!==""
+                            width: parent.width/2
+                            height: parent.height
+                            anchors.right: parent.right
+                            Image{
+                                anchors.centerIn: parent
+                                height: parent.height*0.7
+                                width: height
+                                sourceSize.width: height
+                                sourceSize.height: height
+                                source: "../images/rotate.png"
+                            }
+                            MouseArea {
+                                anchors.fill:parent
+                                enabled: photosave!==""
+                                onClicked: {
+                                    newphoto.rotat++
+                                }
+                            }
+                        }
+                        Rectangle {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            color: "#dddddd"
+                            visible: photosave!==""
+                            height: parent.height
+                            width: 3
                         }
                     }
                 }
+
+
                 Button {
                     id: removebutton
                     text: qsTr("Delete member")+mytrans.emptyString
@@ -320,6 +420,13 @@ Page {
         console.log(text);
         page.memberqr = text;
         return text;
+    }
+
+    MyClient {
+        id: removephotoclient
+        ip: globalSettings.serverIP
+        port: globalSettings.serverPort
+        password: globalSettings.serverPassword
     }
 
     MySQLiteHandler {
@@ -380,8 +487,20 @@ Page {
             console.log(data);
             if (data==="request executed")
             {
+
                 if (page.editMember=="")
-                    queryExecutedDialog.open();
+                {
+                    successanimation.play()
+                    mtf1.fieldText=""
+                    mtf2.fieldText=""
+                    mtf3.fieldText=""
+
+                    qrgenerator.request = "select qrcode from members where qrcode='"+makeid()+"'"
+                    qrgenerator.update()
+                    photosave=""
+                    photopreview=""
+                    newphoto.source="../images/new_photo.png"
+                }//queryExecutedDialog.open();
                 else
                     operationSuccessfullyCompletedDialog.open();
             }
@@ -390,32 +509,48 @@ Page {
         }
         onErrorFounded: connectionErrorDialog.open();
     }
-
     Dialog {
-        id: queryExecutedDialog
-        title: qsTr("Info")+mytrans.emptyString
-        standardButtons: Dialog.No | Dialog.Yes
+        id: createNewProfileDialog
+        title: qsTr("Warning")+mytrans.emptyString
+        standardButtons: Dialog.Ok | Dialog.Cancel
         anchors.centerIn: parent
         font.pixelSize: fontSize
         Label {
-            text: qsTr("Member <b>successfully</b> created")+(page.nogroups? qsTr(" <b>without any group access</b>"):"")+qsTr(". Do you want to <b>edit</b> created member?")+mytrans.emptyString
+            text: qsTr("Create/change a member?")+mytrans.emptyString
             anchors.fill: parent
             font.pixelSize: fontSize
             wrapMode: Text.WordWrap
         }
-        onAccepted: {
-            page.editMember=page.memberqr;
-            newphoto.source="../images/new_photo.png"
-            imgSend.deleteImg(oldphotosave)
-        }
-        onRejected: {
-            console.log("Updating qrcode")
-            qrgenerator.request = "select qrcode from members where qrcode='"+makeid()+"'"
-            qrgenerator.update()
-            newphoto.source="../images/new_photo.png"
-            imgSend.deleteImg(oldphotosave)
-        }
+        onAccepted: addToDatabase()
     }
+
+    //    Dialog {
+    //        id: queryExecutedDialog
+    //        title: qsTr("Info")+mytrans.emptyString
+    //        standardButtons: Dialog.No | Dialog.Yes
+    //        anchors.centerIn: parent
+    //        font.pixelSize: fontSize
+    //        Label {
+    //            text: qsTr("Member <b>successfully</b> created")+(page.nogroups? qsTr(" <b>without any group access</b>"):"")+qsTr(". Do you want to <b>edit</b> created member?")+mytrans.emptyString
+    //            anchors.fill: parent
+    //            font.pixelSize: fontSize
+    //            wrapMode: Text.WordWrap
+    //        }
+    //        onAccepted: {
+    //            page.editMember=page.memberqr;
+    //            photosave=""
+    //            //imgSend.deleteImg(oldphotosave)
+    //        }
+    //        onRejected: {
+    //            console.log("Updating qrcode")
+    //            qrgenerator.request = "select qrcode from members where qrcode='"+makeid()+"'"
+    //            qrgenerator.update()
+    //            photosave=""
+    //            photopreview=""
+    //            newphoto.source="../images/new_photo.png"
+    //            //imgSend.deleteImg(oldphotosave)
+    //        }
+    //    }
     Dialog {
         id: operationSuccessfullyCompletedDialog
         title: qsTr("Info")+mytrans.emptyString
@@ -429,9 +564,12 @@ Page {
             wrapMode: Text.WordWrap
         }
         onClosed: {
+            //newphoto.update()
+            photosave=""
+            photopreview=""
+            //newphoto.source="../images/new_photo.png"
+            //stackView.push("DBAddMemberPage.qml");
             stackView.pop();
-            newphoto.update()
-            stackView.push("DBAddMemberPage.qml");
         }
     }
     Dialog {
@@ -446,7 +584,11 @@ Page {
             font.pixelSize: fontSize
             wrapMode: Text.WordWrap
         }
-        onAccepted: sqlhandler.sendGetQuery("delete from members where qrcode='"+page.editMember+"'")
+        onAccepted: {
+            sqlhandler.sendGetQuery("delete from members where qrcode='"+page.editMember+"'")
+            if (photopreview!=="")
+                removephotoclient.sendGet(page.editMember, "delete photo")
+        }
     }
     Dialog {
         id: nameNotSelectedDialog

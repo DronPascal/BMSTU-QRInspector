@@ -16,10 +16,6 @@
 #include "staticfilecontroller.h"
 
 #include <iostream>
-//#include <io.h>
-//#include <fcntl.h>
-//#include <stdio.h>
-#include <windows.h>   // WinApi header
 
 /** Name of this application */
 #define APPNAME "QRInspectorServer"
@@ -170,16 +166,12 @@ void Startup::start()
         ServerSettings->database.setDatabaseName(ServerSettings->postgresDbName);
     }
 
-    HANDLE  hConsole;
-    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     if (!ServerSettings->database.open())
     {
         qDebug();
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
         qWarning("!!!CANT OPEN DATABASE!!!");
         qWarning("!!!CHECK YOUR DATABASE OR CONNECTION SETTINGS!!!");
         qWarning("Startup: Service has started with errors");
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
         //stop();
     }
     else
@@ -195,9 +187,7 @@ void Startup::start()
         }
         qDebug();
         qDebug() << "Database successfully opened!";
-        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
         qWarning("Startup: Service has successfully started");
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN);
     }
 }
 

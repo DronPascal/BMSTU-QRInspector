@@ -47,8 +47,19 @@ void RequestHandler::service(HttpRequest& request, HttpResponse& response)
     {
         if (str.contains("images/"))
         {
-            ImageController().service(request, response);
-
+            //ImageController().service(request, response);
+            QFile file(ServerSettings->docroot+str);
+            if (file.open(QIODevice::ReadOnly))
+            {
+                response.setHeader("Content-Type", "image/jpeg");
+                response.setHeader("Cache-Control","max-age="+QByteArray::number(60000/1000));
+                QByteArray buffer=file.readAll();
+                response.write(buffer);
+            }
+            else{
+                response.write("defaultface",true);
+                qDebug() << "defaultface";
+            }
             qDebug()<< "Image";
         }
         else if (str.contains("uploadimage"))
@@ -93,7 +104,10 @@ void RequestHandler::service(HttpRequest& request, HttpResponse& response)
                     {
                         myQ.exec(querylist[i]);
                         if (!myQ.isActive())
+                        {
+                            qDebug() << "DATABASE ERROR! " << myQ.lastError().text();
                             responsemsg = myQ.lastError().text();
+                        }
                     }
                     response.write(responsemsg.toStdString().c_str(),true);
                 }
@@ -138,6 +152,12 @@ void RequestHandler::service(HttpRequest& request, HttpResponse& response)
             else
                 response.write("accessdenied", true);
         }
+        else if (requestCommand=="delete photo")
+        {
+            QString qrcode = str.remove(0,1);
+            qDebug() <<"removing member photo: " <<ServerSettings->docroot+"/images/"+qrcode+".jpg";
+            QFile::remove(ServerSettings->docroot+"/images/"+qrcode+".jpg");
+        }
         else if (requestCommand=="execute sqlquery")
         {
             if (str.remove(0,1)==ServerSettings->dbPassword)
@@ -158,6 +178,7 @@ void RequestHandler::service(HttpRequest& request, HttpResponse& response)
                         myQ.exec(querylist[i]);
                         if (!myQ.isActive())
                         {
+                            qDebug() << "DATABASE ERROR! " << myQ.lastError().text();
                             response.write(myQ.lastError().text().toStdString().c_str(),true);
                             return;
                         }
@@ -194,6 +215,7 @@ void RequestHandler::service(HttpRequest& request, HttpResponse& response)
                             response.write("request executed",true);
                     }
                     else {
+                        qDebug() << "DATABASE ERROR! " << myQ.lastError().text();
                         response.write(("ERROR: "+myQ.lastError().text()).toStdString().c_str(),true);
                     }
                 }
@@ -239,15 +261,15 @@ void RequestHandler::service(HttpRequest& request, HttpResponse& response)
                         }
                         else{
                             response.write("databaseerror",true);
-                            qDebug() << "databaseerror";}
+                            qDebug() << "DATABASE ERROR! " << myQ.lastError().text();}
                     }
                     else{
                         response.write("accessdenied",true);
                         qDebug() << "accessdenied";}
                 }
                 else{
-                    response.write("databaseerror",true);
-                    qDebug() << "databaseerror";}
+                    qDebug() << "DATABASE ERROR! " << myQ.lastError().text();
+                    response.write("databaseerror",true);}
             }
             else
             {
