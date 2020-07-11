@@ -54,6 +54,12 @@ ApplicationWindow
         property string passConfiguratorText: ""
 
         property int cameraPosition: 1
+        property bool cameraConfigured: false
+        property double scaling: 1
+        property double camera_width: -1
+        property double camera_height: -1
+        property int camera_fps: 10
+
 
         property bool debug: false
         property bool locked : false
@@ -68,6 +74,7 @@ ApplicationWindow
         id: stackView
         property int fontSize: Math.min(height, width)/22
         property int prevDepth: 0
+        //        property bool update_cam: false
         initialItem: initSettings.initItem
         anchors.fill: parent
         Settings{
@@ -86,12 +93,14 @@ ApplicationWindow
                 instructor.pageGuide(currentItem.title)
             }
             if (prevDepth>depth)
+            {
                 currentItem.update();
+                if (currentItem.title==="Add/Edit Member Page")
+                    currentItem.setphotosource(photopreview)
+            }
+
             prevDepth=depth;
             hideImg();
-
-            if (currentItem.title==="Add/Edit Member Page")
-                currentItem.setphotosource(photopreview)
         }
     }
     My.AppInstructor {
@@ -190,6 +199,19 @@ ApplicationWindow
         initSettings.initItem="StartPage.qml"
         stackView.clear()
         stackView.push("StartPage.qml")
+    }
+    function updateCamera() {
+        initSettings.initItem="ViewerPage.qml"
+        stackView.clear()
+        cameraopen.restart()
+    }
+    Timer {
+        id: cameraopen
+        interval: 1500; running: false; repeat: false
+        onTriggered: {
+            stackView.push("ViewerPage.qml")
+        }
+
     }
 
     //ФОТО ВОШЕДШЕГО    //ФОТО ВОШЕДШЕГО    //ФОТО ВОШЕДШЕГО    //ФОТО ВОШЕДШЕГО    //ФОТО ВОШЕДШЕГО    //ФОТО ВОШЕДШЕГО
@@ -444,7 +466,10 @@ ApplicationWindow
             }
             MouseArea {
                 anchors.fill: parent
-                onPressed: myconsole.exec()
+                onPressed: {
+                    consoleButt.forceActiveFocus()
+                    myconsole.exec()
+                }
             }
         }
         function exec()
@@ -456,7 +481,7 @@ ApplicationWindow
                 globalSettings.guide="true"
                 instructor.reset()
                 initSettings.initItem="StartPage.qml"
-                stackView.clear()
+                //stackView.clear()
                 stackView.clear()
                 stackView.push("StartPage.qml")
             }
@@ -521,5 +546,4 @@ ApplicationWindow
             successanimation.visible=true
         }
     }
-
 }

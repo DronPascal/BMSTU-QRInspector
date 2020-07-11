@@ -75,7 +75,7 @@ class QZXingFilter : public QAbstractVideoFilter
     Q_OBJECT
         Q_PROPERTY(bool decoding READ isDecoding NOTIFY isDecodingChanged)
         Q_PROPERTY(bool mirroring READ isMirroring WRITE setMirroring)
-        Q_PROPERTY(bool scaling READ getScaling WRITE setScaling)
+        Q_PROPERTY(double scaling READ getScaling WRITE setScaling)
         Q_PROPERTY(QZXing* decoder READ getDecoder)
         Q_PROPERTY(QRectF captureRect MEMBER captureRect NOTIFY captureRectChanged)
 
@@ -100,16 +100,21 @@ class QZXingFilter : public QAbstractVideoFilter
     public:  /// Methods
         explicit QZXingFilter(QObject *parent = 0);
         virtual ~QZXingFilter();
+
         bool mirroring = false;
         void setMirroring(bool val) {mirroring = val; }
         bool isMirroring() {return mirroring; }
-        double scaling = 2.0;
+        double scaling;
         double getScaling() {return scaling; }
         void setScaling(double val) {scaling = val; }
+        bool firstFrame=true;
+
         bool isDecoding() {return decoding; }
         QZXing* getDecoder() { return &decoder; }
 
         QVideoFilterRunnable * createFilterRunnable();
+    Q_SIGNALS:
+    void cameraResolution(const QString& resolution);
 };
 
 /// A new Runnable is created everytime the filter gets a new frame

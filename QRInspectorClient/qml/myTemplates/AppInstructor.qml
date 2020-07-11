@@ -127,12 +127,14 @@ We list in order what the input fields of the current page are responsible for:<
 1) Inspector ID - optionally a unique name for the point where the inspector is located. If two inspectors have the same ID, they will complement each other, as if there were two entrances to the room.<br/>
 2) Re-auth delay - The delay between resending a request to add a visit to a member. It is highly undesirable to leave this value very small in order to avoid too often polling the server by inspectors and high load on it.<br/>
 3) Client password - password to unlock the inspector. Without it, anyone can change the settings at their discretion.<br/>
-4) Server IP - server IP in a local or global network. The easiest way is to configure the server to work on a local network (for example, devices are connected to the same WiFi point).<br/>
+4) Entry sound - the sound that will be played after the member has successfully recorded the visit.<br/>
+5) Server IP - server IP in a local or global network. The easiest way is to configure the server to work on a local network (for example, devices are connected to the same WiFi point).<br/>
 You can learn more about setting up a server to access it from the global network on the Internet.<br/>
-5) Server port - the port on which the QRInspector server application is running.<br/>
-6) Server password - the server password that you specified in the server configuration file before starting.<br/>
-7) Entry sound - the sound that will be played after the member has successfully recorded the visit.<br/>
-8) Change role - returns to the main screen for subsequent role selection.<br/><br/>
+6) Server port - the port on which the QRInspector server application is running.<br/>
+7) Server password - the server password that you specified in the server configuration file before starting.<br/>
+8) Scaling - scaling the frame captured by the camera before the recognition of qr code. This setting allows you to increase the recognition speed. The smaller the size of the processed cdr, the higher the speed and the closer you will have to bring the qr code to the inspector's camera. At the first start, the scaling is adjusted so that the width and height of the processed frame does not exceed 500px. This setting is individual for each device; therefore, it cannot be changed using the qr inspector configuration code.<br/>
+9) FPS - the number of frames that will be transmitted for recognition per second, and also displayed on the inspector's main page. The high frame rate does not give a noticeable increase in recognition speed, so it is recommended not to change this setting. Similar to the previous one, this setting is individual for each device, therefore it cannot be changed using the qr inspector configuration code.<br/>
+10) Change role - returns to the main screen for subsequent role selection.<br/><br/>
 The button next to the server password field allows you to check the connection to the server. Click on it and if it turns green, then the connection has been successfully established and the server is currently available. In the opposite case, an inscription with an error will appear below it.<br/><br/>
 Fill in the IP, port and server password fields. Check if the inspector can connect to the server. After that, you can familiarize yourself with the “Administrator” role by clicking on “Change role”.")+mytrans.emptyString
             pagedialog.open()
@@ -141,9 +143,9 @@ Fill in the IP, port and server password fields. Check if the inspector can conn
             label.text=qsTr("<b>Admin menu</b><br/>
 This page is the admin home page.<br/>
 The role of the administrator is to configure inspectors and create profiles of members, groups, and events. But to gain access to these functions, you must first connect to the server. Use the data that you received at the stage of setting up and starting the server.<br/><br/>
--The menu button “Create inspector configuration code” opens a dialog by entering in which the identifier of the inspector to be configured, the application password, the delay for recounting and selecting the input sound, after clicking OK, a QR code will appear on the screen, recognizing which by the inspector, the latter will change its settings.<br/>
+- The menu button “Create inspector configuration code” opens a dialog by entering in which the identifier of the inspector to be configured, the application password, the delay for recounting and selecting the input sound, after clicking OK, a QR code will appear on the screen, recognizing which by the inspector, the latter will change its settings.<br/>
 - The database settings button opens a menu for working with profiles of members, groups and events.<br/>
--Button to change the role allows you to go to the start page to re-select the role. The entered settings do not disappear.<br/><br/>
+- Button to change the role allows you to go to the start page to re-select the role. The entered settings do not disappear.<br/><br/>
 Connect to the server and familiarize yourself with the interface for creating configuration codes, and then go to the database setup menu.")+mytrans.emptyString
             pagedialog.open()
         }
@@ -240,7 +242,7 @@ Enter the superuser password that you specified in the server configuration file
                 visible: item.curpage==="Start Page"
                 Text {
                     id: langlabel
-                    text: "Choose lanuage"
+                    text: "Choose language"
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: fontsize
                     onLinkActivated: Qt.openUrlExternally("https://drive.google.com/drive/folders/1WliTTdy9TGyL9vs62rT4UmO5bYHCzjID?usp=sharing")
@@ -366,6 +368,8 @@ After the server starts successfully, you can proceed to the next step. Click OK
             }
         }
         onClosed: {
+            globalSettings.lang=langbox.currentText
+            row.visible=false
             if (skipbox.checked)
                 globalSettings.guide = false
         }

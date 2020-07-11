@@ -6,7 +6,7 @@
     <message>
         <location filename="../AdminSettingsPage.qml" line="24"/>
         <source>Admin menu</source>
-        <translation>Меню Админа</translation>
+        <translation>Меню Администратора</translation>
     </message>
     <message>
         <location filename="../AdminSettingsPage.qml" line="51"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../AdminSettingsPage.qml" line="103"/>
         <source>Create inspector configuration qrcode</source>
-        <translation>Создать код конфигурации инспектора</translation>
+        <translation>Создать код конфигурации валидатора</translation>
     </message>
     <message>
         <location filename="../AdminSettingsPage.qml" line="125"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../AdminSettingsPage.qml" line="285"/>
         <source>Configurabe Inspector ID:</source>
-        <translation>ID конфигурируемого инспектора</translation>
+        <translation>ID конфигурируемого валидатора</translation>
     </message>
     <message>
         <location filename="../AdminSettingsPage.qml" line="292"/>
@@ -262,7 +262,7 @@ Connect to the server and familiarize yourself with the interface for creating c
 Подключитесь к серверу и ознакомьтесь с интерфейсом создания конфигурационных кодов, а после перейдите в меню настройки базы данных.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="152"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="154"/>
         <source>This page has four sections:&lt;br/&gt;
 1) Adding profiles of members, groups and events.&lt;br/&gt;
 2) View tables of existing profiles and edit them.&lt;br/&gt;
@@ -277,7 +277,7 @@ To work with the database, the corresponding database access password is require
 Для работы с базой данных требуется соответствующий пароль доступа к базе данных, который вы указали в конфигурационном файле сервера. Введите его и продолжайте изучение интерфейса по порядку, начиная с добавления участников.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="161"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="163"/>
         <source>&lt;b&gt;Add Member&lt;/b&gt;&lt;br/&gt;
 When adding and editing a member’s profile, the required fields are the first and last name. You can create members with the same name. Each of them will be assigned a unique ID and QR code.&lt;br/&gt;
 After creating groups or events, fields will appear in this interface with which you can select groups and events to which you would like to add a member already at the stage of creating his profile.&lt;br/&gt;&lt;br/&gt;
@@ -371,7 +371,6 @@ After the server starts successfully, you can proceed to the next step. Click OK
 После успешного запуска сервера можете переходить к следующему шагу. Нажмите ОК и  выберите роль, о возможностях которой вы бы хотели узнать. Порядок изучения функционала приложения не играет большой роли.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="141"/>
         <source>&lt;b&gt;Admin menu&lt;/b&gt;&lt;br/&gt;
 This page is the admin home page.&lt;br/&gt;
 The role of the administrator is to configure inspectors and create profiles of members, groups, and events. But to gain access to these functions, you must first connect to the server. Use the data that you received at the stage of setting up and starting the server.&lt;br/&gt;&lt;br/&gt;
@@ -379,7 +378,7 @@ The role of the administrator is to configure inspectors and create profiles of 
 - The database settings button opens a menu for working with profiles of members, groups and events.&lt;br/&gt;
 -Button to change the role allows you to go to the start page to re-select the role. The entered settings do not disappear.&lt;br/&gt;&lt;br/&gt;
 Connect to the server and familiarize yourself with the interface for creating configuration codes, and then go to the database setup menu.</source>
-        <translation>&lt;b&gt;Меню администратора&lt;/b&gt;&lt;br/&gt;
+        <translation type="vanished">&lt;b&gt;Меню администратора&lt;/b&gt;&lt;br/&gt;
 Эта страница является главной страницей администратора.&lt;br/&gt;
 Роль администратора заключается в настройке валидаторов и создании профилей участников, групп и событий. Но для получения доступа к этим функциям сначала надо подключиться к серверу. Воспользуйтесь данными, которые вы получили на этапе настройки и запуска сервера.&lt;br/&gt;&lt;br/&gt;
 -Кнопка меню “Создать конфигурационный код валидатора” открывает диалог, введя в котором ID конфигурируемого валидатора, пароль приложения, задержку повторного учета и выбрав звук входа, после нажатия кнопки ОК на экране появится QR код, распознав который валидатором, последний изменит свои настройки.&lt;br/&gt;
@@ -388,7 +387,7 @@ Connect to the server and familiarize yourself with the interface for creating c
 Подключитесь к серверу и ознакомьтесь с интерфейсом создания конфигурационных кодов, а после перейдите в меню настройки базы данных.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="168"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="170"/>
         <source>&lt;b&gt;Add Group&lt;/b&gt;&lt;br/&gt;
 When adding and editing a group, the name is required. The name of the group must be unique, otherwise the group will not be created.&lt;br/&gt;
 After creating profiles of members or events in this interface, fields will appear with which you can select the members in this group and the events to which groups will be invited&lt;br/&gt;&lt;br/&gt;
@@ -479,7 +478,7 @@ After the server starts successfully, you can proceed to the next step. Click OK
 После успешного запуска сервера можете переходить к следующему шагу. Нажмите ОК и  выберите роль, о возможностях которой вы бы хотели узнать. Порядок изучения функционала приложения не играет большой роли.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="175"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="177"/>
         <source>&lt;b&gt;Add Event&lt;/b&gt;&lt;br/&gt;
 When adding and editing an event, the required fields are the name, inspector ID, start time, end time and date or days of the week on which the event will occur. The name of the event must be unique, otherwise the event will not be created.&lt;br/&gt;&lt;br/&gt;
 When entering date and time values, strictly adhere to the format indicated on the background of the input field.&lt;br/&gt;
@@ -499,8 +498,8 @@ ID валидатора должен полностью совпадать с т
     </message>
     <message>
         <location filename="../qml/myTemplates/AppInstructor.qml" line="77"/>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="267"/>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="294"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="269"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="296"/>
         <source>It is strongly recommended that you &lt;b&gt;read this&lt;/b&gt; comprehensive guide, which describes all the features of the presented product and the steps to configure it.&lt;br/&gt;&lt;br/&gt;
 The application was developed and released by students of the BMSTU FN11 faculty: Pascal A.P., Shibanov A.O., Kadiev A. Lecturer - Gumirgaliev T.R.&lt;br/&gt;&lt;br/&gt;
 This client-server application is a working solution for recording visits to &quot;events&quot; by company members using QR codes for identification. By &quot;events&quot; we mean meetings, classes, and any other kind of meeting, timed to a specific place and time. A recognition device must correspond to each such place, for the description of which we have chosen the word &quot;inspector&quot; and we will adhere to this definition in further instructions.&lt;br/&gt;&lt;br/&gt;
@@ -512,7 +511,7 @@ Any authorization and accounting of visits occur through the server application.
 After the server starts successfully, you can proceed to the next step. Click OK and select the role that you would like to know about the features. The order of studying the functionality of the application does not play a big role.</source>
         <translation>Настоятельно &lt;b&gt;рекомендуем прочесть&lt;/b&gt; данное исчерпывающее руководство, в котором описаны все возможности представленного продукта и шаги по его настройке.&lt;br/&gt;&lt;br/&gt;
 Приложение разработали и выпустили студенты кафедры ФН11 МГТУ им. Баумана: Паскал А.П., Шибанов А.О., Кадиев А. Преподаватель – Гумиргалиев Т.Р.&lt;br/&gt;&lt;br/&gt;
-Данное клиент-серверное приложение является рабочим решением для учета посещений &quot;событий&quot; участниками компании с использованием QR кодов для идентификации. Под &quot;событиями&quot; имеются в виду встречи, занятия и любого другого рода собрания, приуроченные к определенному месту и времени. Каждому такому месту должно соответствовать устройство распознавания, для описания которого мы выбрали слово &quot;валидатор&quot; и будем придерживаться этого определения в дальнейших инструкциях.&lt;br/&gt;&lt;br/&gt;
+Клиент-серверный проект QRInspector является рабочим решением для учета посещений &quot;событий&quot; участниками компании с использованием QR кодов для идентификации. Под &quot;событиями&quot; имеются в виду встречи, занятия и любого другого рода собрания, приуроченные к определенному месту и времени. Каждому такому месту должно соответствовать устройство распознавания, для описания которого мы выбрали слово &quot;валидатор&quot; и будем придерживаться этого определения в дальнейших инструкциях.&lt;br/&gt;&lt;br/&gt;
 Данное приложение позволяет выбрать одну из двух ролей: Валидатор и Администратор.&lt;br/&gt;&lt;br/&gt;
 -Устройство с ролью &quot;Валидатор&quot; после настройки и подключения к приложению-серверу QRInspector, как уже было описано выше, будет считывать QR-коды, которые участники будут демонстрировать перед его камерой. Только после успешного распознавания QR кода и проверки на сервере, участнику зачтется посещение.&lt;br/&gt;&lt;br/&gt;
 -Устройство с ролью &quot;Администратор&quot; после подключения к приложению-серверу QRInspector, предоставит пользователю возможность создавать и изменять профили участников, групп и событий.&lt;br/&gt;&lt;br/&gt;
@@ -578,7 +577,7 @@ A console appears at the bottom of the screen that supports several commands tha
 - не пройдена первичная проверка или вход на событие запрещен (посещение не будет засчитано).&lt;br/&gt;&lt;br/&gt;
 Это все, что стоит знать о главной странице валидатора, можете перейти на страницу его настройки нажав на кнопку с шестерней в правом верхнем углу. Изначально она прозрачная.&lt;br/&gt;&lt;br/&gt;
 Дополнительная информация о режиме дебаггинга:&lt;br/&gt;
-Если нажать на кнопку с жуком, то по центру экрана отобразится поле с информация о количестве считанных кодов, прошедших первичную проверку, а также тэг последнего из них.&lt;br/&gt;
+Если нажать на кнопку с жуком, то по центру экрана отобразится поле с информация о количестве считанных кодов, прошедших первичную проверку, тэг последнего из них. fps - количество кадров, обрабытываемых декодером за секунду. cam_fps - количество кадров, получаемых от камеры за секунду. Processed image size - размер кадра, поступающего декодеру на обработку.&lt;br/&gt;
 Внизу экрана появится консоль, поддерживающая несколько команд, которые использовались при разработке, но вам скорее всего не понадобятся.&lt;br/&gt;
 1) [reset] - ввод данной команды сбрасывает только настройки языка, гайда и стартовой страницы. Симулирует первое открытие приложения, не затирая настройки валидатора и админа.&lt;br/&gt;
 2) [close] - закрывает консоль, открыть ее снова можно только через кнопку с жуком.&lt;br/&gt;
@@ -587,7 +586,6 @@ A console appears at the bottom of the screen that supports several commands tha
 5) [test] - отправляет пробный запрос на сервер. В качестве ответа получает картинку. Симулирует отображение фотографии участника и воспроизведение звука при входе.&lt;br/&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="123"/>
         <source>&lt;b&gt;Inspector settings page&lt;/b&gt;&lt;br/&gt;
 To successfully connect the inspector to the server, you need to enter the IP, port and password of the server, which you already know if you started the server and followed the instructions in the readme.txt file.&lt;br/&gt;
 Recall that to configure the inspector, it is enough to bring the qr code generated by the administrator.&lt;br/&gt;&lt;br/&gt;
@@ -603,7 +601,7 @@ You can learn more about setting up a server to access it from the global networ
 8) Change role - returns to the main screen for subsequent role selection.&lt;br/&gt;&lt;br/&gt;
 The button next to the server password field allows you to check the connection to the server. Click on it and if it turns green, then the connection has been successfully established and the server is currently available. In the opposite case, an inscription with an error will appear below it.&lt;br/&gt;&lt;br/&gt;
 Fill in the IP, port and server password fields. Check if the inspector can connect to the server. After that, you can familiarize yourself with the “Administrator” role by clicking on “Change role”.</source>
-        <translation>&lt;b&gt;Настройки валидатора&lt;/b&gt;&lt;br/&gt;
+        <translation type="vanished">&lt;b&gt;Настройки валидатора&lt;/b&gt;&lt;br/&gt;
 Для успешного подключения валидатора к серверу надо ввести IP, порт и пароль сервера, которые вы уже знаете, если запустили сервер и следовали инструкциям файла readme.txt. &lt;br/&gt;
 Напомним, что для настройки валидатора достаточно поднести qr код, сгенерированный администратором.&lt;br/&gt;&lt;br/&gt;
 Перечислим по порядку за что отвечают поля ввода текущей страницы:&lt;br/&gt;
@@ -620,7 +618,61 @@ Fill in the IP, port and server password fields. Check if the inspector can conn
 Заполните поля IP, порт и пароль сервера. Проверьте, может ли валидатор подключиться к серверу. После этого можете ознакомиться с ролью “Администратор” нажав на “Сменить роль”.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="187"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="123"/>
+        <source>&lt;b&gt;Inspector settings page&lt;/b&gt;&lt;br/&gt;
+To successfully connect the inspector to the server, you need to enter the IP, port and password of the server, which you already know if you started the server and followed the instructions in the readme.txt file.&lt;br/&gt;
+Recall that to configure the inspector, it is enough to bring the qr code generated by the administrator.&lt;br/&gt;&lt;br/&gt;
+We list in order what the input fields of the current page are responsible for:&lt;br/&gt;
+1) Inspector ID - optionally a unique name for the point where the inspector is located. If two inspectors have the same ID, they will complement each other, as if there were two entrances to the room.&lt;br/&gt;
+2) Re-auth delay - The delay between resending a request to add a visit to a member. It is highly undesirable to leave this value very small in order to avoid too often polling the server by inspectors and high load on it.&lt;br/&gt;
+3) Client password - password to unlock the inspector. Without it, anyone can change the settings at their discretion.&lt;br/&gt;
+4) Entry sound - the sound that will be played after the member has successfully recorded the visit.&lt;br/&gt;
+5) Server IP - server IP in a local or global network. The easiest way is to configure the server to work on a local network (for example, devices are connected to the same WiFi point).&lt;br/&gt;
+You can learn more about setting up a server to access it from the global network on the Internet.&lt;br/&gt;
+6) Server port - the port on which the QRInspector server application is running.&lt;br/&gt;
+7) Server password - the server password that you specified in the server configuration file before starting.&lt;br/&gt;
+8) Scaling - scaling the frame captured by the camera before the recognition of qr code. This setting allows you to increase the recognition speed. The smaller the size of the processed cdr, the higher the speed and the closer you will have to bring the qr code to the inspector&apos;s camera. At the first start, the scaling is adjusted so that the width and height of the processed frame does not exceed 500px. This setting is individual for each device; therefore, it cannot be changed using the qr inspector configuration code.&lt;br/&gt;
+9) FPS - the number of frames that will be transmitted for recognition per second, and also displayed on the inspector&apos;s main page. The high frame rate does not give a noticeable increase in recognition speed, so it is recommended not to change this setting. Similar to the previous one, this setting is individual for each device, therefore it cannot be changed using the qr inspector configuration code.&lt;br/&gt;
+10) Change role - returns to the main screen for subsequent role selection.&lt;br/&gt;&lt;br/&gt;
+The button next to the server password field allows you to check the connection to the server. Click on it and if it turns green, then the connection has been successfully established and the server is currently available. In the opposite case, an inscription with an error will appear below it.&lt;br/&gt;&lt;br/&gt;
+Fill in the IP, port and server password fields. Check if the inspector can connect to the server. After that, you can familiarize yourself with the “Administrator” role by clicking on “Change role”.</source>
+        <translation>&lt;b&gt;Настройки валидатора&lt;/b&gt;&lt;br/&gt;
+Для успешного подключения валидатора к серверу надо ввести IP, порт и пароль сервера, которые вы уже знаете, если запустили сервер и следовали инструкциям файла readme.txt. &lt;br/&gt;
+Напомним, что для настройки валидатора достаточно поднести qr код, сгенерированный администратором.&lt;br/&gt;&lt;br/&gt;
+Перечислим по порядку за что отвечают поля ввода текущей страницы:&lt;br/&gt;
+1) ID валидатора – необязательно уникальное название точки, где расположен валидатор. Если у двух валидаторов одинаковый ID, то они будут дополнять друг друга, как если бы в помещение существовало два входа.&lt;br/&gt;
+2) Пауза повт. уч. – задержка между повторной отправкой запроса на добавление посещения участнику. Крайне нежелательно оставлять это значение очень маленьким во избежание слишком частого опроса сервера валидаторами и высокой нагрузки на него.&lt;br/&gt;
+3) Пароль прилож. – пароль для разблокировки валидатора. Без него, любой сможет изменить настройки по своему усмотрению.&lt;br/&gt;
+4) Звук входа – звук, который будет воспроизводиться после успешного учета посещения участником.&lt;br/&gt;
+5) IP сервера – IP сервера в локальной или глобальной сети. Проще всего настроить сервер для работы в локальной сети (например устройства подключены к одной точке WiFi).&lt;br/&gt;
+О настройке сервера для доступа к нему из глобальной сети вы можете узнать больше в интернете.&lt;br/&gt;
+6) Порт сервера – порт, на котором запущено серверное приложение QRInspector.&lt;br/&gt;
+7) Пароль сервера – пароль сервера, который вы указали в конфигурационном файле сервера перед запуском.&lt;br/&gt;
+8) Масштабирование - масштабирование кадра, захватываемого камерой, перед началом распознавания qr кода. Данная настройка позволяет увеличить скорость распознавания. Чем меньше размер обрабатываемого кдра, тем выше скорость и тем ближе придется подносить qr код к камере инспектора. При первом запуске масштабирование настраивается так, чтобы ширина и высота обрабатываемого кадра не превышали 500px. Эта настройка идивидуальна для каждого устройства, поэтому ее нельзя изменить с помощью qr кода конфиграции валидатора.&lt;br/&gt;
+9) FPS - количество кадров, которые будут передаваться на распознавание в секунду, а также отображаться на главной странице валидатора. Высокая частота кадров не дает ощутимого прироста к скорости распознавания, поэтому рекомендуется не изменять эту настройку. Аналогично предыдущей, эта настройка идивидуальна для каждого устройства, поэтому ее нельзя изменить с помощью qr кода конфиграции валидатора.&lt;br/&gt;
+10) Сменить роль – возвращает на главный экран для последующего выбора роли.&lt;br/&gt;
+Кнопка рядом с полем пароля сервера позволяет проверить соединение с сервером. Нажмите на нее, если она загорится зеленым, значит сервер в данный момент доступен и валидатор подключен. В противном случае под кнопкой отобразится надпись с возникшей ошибкой.&lt;br/&gt;&lt;br/&gt;
+Заполните поля IP, порт и пароль сервера. Проверьте, может ли валидатор подключиться к серверу. После этого ознакомьтесь с ролью “Администратор” нажав на “Сменить роль”.</translation>
+    </message>
+    <message>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="143"/>
+        <source>&lt;b&gt;Admin menu&lt;/b&gt;&lt;br/&gt;
+This page is the admin home page.&lt;br/&gt;
+The role of the administrator is to configure inspectors and create profiles of members, groups, and events. But to gain access to these functions, you must first connect to the server. Use the data that you received at the stage of setting up and starting the server.&lt;br/&gt;&lt;br/&gt;
+- The menu button “Create inspector configuration code” opens a dialog by entering in which the identifier of the inspector to be configured, the application password, the delay for recounting and selecting the input sound, after clicking OK, a QR code will appear on the screen, recognizing which by the inspector, the latter will change its settings.&lt;br/&gt;
+- The database settings button opens a menu for working with profiles of members, groups and events.&lt;br/&gt;
+- Button to change the role allows you to go to the start page to re-select the role. The entered settings do not disappear.&lt;br/&gt;&lt;br/&gt;
+Connect to the server and familiarize yourself with the interface for creating configuration codes, and then go to the database setup menu.</source>
+        <translation>&lt;b&gt;Меню администратора&lt;/b&gt;&lt;br/&gt;
+Эта страница является главной страницей администратора.&lt;br/&gt;
+Роль администратора заключается в настройке валидаторов и создании профилей участников, групп и событий. Но для получения доступа к этим функциям сначала надо подключиться к серверу. Воспользуйтесь данными, которые вы получили на этапе настройки и запуска сервера.&lt;br/&gt;&lt;br/&gt;
+- Кнопка меню “Создать конфигурационный код валидатора открывает диалог, введя в котором ID конфигурируемого валидатора, пароль приложения, задержку повторного учета и выбрав звук входа, после нажатия кнопки ОК на экране появится QR код, распознав который валидатором, последний изменит свои настройки.&lt;br/&gt;
+- Кнопка &quot;Настройки базы данных&quot; открывает меню для работы с профилями участников, групп и событий.&lt;br/&gt;
+- Кнопка &quot;Сменить роль&quot; позволяет перейти на стартовую страницу для повторного выбора роли. Введенные настройки при этом не пропадают. &lt;br/&gt;&lt;br/&gt;
+Подключитесь к серверу и ознакомьтесь с интерфейсом создания конфигурационных qr кодов, а после перейдите в меню настройки базы данных.</translation>
+    </message>
+    <message>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="189"/>
         <source>&lt;b&gt;Members Table&lt;/b&gt;&lt;br/&gt;
 This table displays all existing members. To search in the table and filter the search result, click on the button with the funnel in the upper right corner.&lt;br/&gt;
 Double-click on the member you are interested in to open his profile. In the window that appears, you can open the profiles of the group in which he is a member and the events to which he is invited. To edit the profile, click on the button with a pencil in the upper right corner.</source>
@@ -629,7 +681,7 @@ Double-click on the member you are interested in to open his profile. In the win
 Нажмите дважды на интересующего вас участника чтобы открыть его профиль. В появившемся окне вы можете открывать профили группы, в которых он состоит и событий, на которые приглашен. Для редактирования профиля нажмите на кнопку с карандашом в правом верхнем углу.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="193"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="195"/>
         <source>&lt;b&gt;Group table&lt;/b&gt;&lt;br/&gt;
 This table displays all existing groups. To search in the table and filter the search result, click on the button with the funnel in the upper right corner.&lt;br/&gt;
 Double-click on a group of interest to open its profile. In the window that appears, you can open the profiles of members in the group and events to which the group is invited. To edit the profile, click on the button with a pencil in the upper right corner.</source>
@@ -638,7 +690,7 @@ Double-click on a group of interest to open its profile. In the window that appe
 Нажмите дважды на интересующую вас группу чтобы открыть ее профиль. В появившемся окне вы можете открывать профили участников, состоящих в группе, и событий, на которые приглашена группа. Для редактирования профиля нажмите на кнопку с карандашом в правом верхнем углу.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="199"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="201"/>
         <source>&lt;b&gt;Event table&lt;/b&gt;&lt;br/&gt;
 This table displays all existing events. To search in the table and filter the search result, click on the button with the funnel in the upper right corner. When entering date and time values, strictly adhere to the format indicated on the background of the input field.&lt;br/&gt;
 Double-click on the event you are interested in to open its profile. In the window that appears, you can open profiles of members and groups invited to the event. To edit the profile, click on the button with a pencil in the upper right corner.</source>
@@ -647,14 +699,14 @@ Double-click on the event you are interested in to open its profile. In the wind
 Нажмите дважды на интересующее вас событие чтобы открыть его профиль. В появившемся окне вы можете открывать профили участников и групп, приглашенных на событие. Для редактирования профиля нажмите на кнопку с карандашом в правом верхнем углу.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="205"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="207"/>
         <source>&lt;b&gt;Visits table&lt;/b&gt;&lt;br/&gt;
 This table displays all registered visits. To search in the table and filter the search result, click on the button with the funnel in the upper right corner. When entering date and time values, strictly adhere to the format indicated on the background of the input field.</source>
         <translation>&lt;b&gt;Таблица посещений&lt;/b&gt;&lt;br/&gt;
 В данной таблице отображаются все зарегистрированные посещения. Для поиска в таблице и фильтрации результата поиска нажмите на кнопку с воронкой в правом верхнем углу. При вводе значений даты и времени строго придерживайтесь формата, указанного на фоне поля ввода.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="211"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="213"/>
         <source>&lt;b&gt;Superuser Menu&lt;/b&gt;&lt;br/&gt;
 This menu provides additional opportunities for working with the database.&lt;br/&gt;&lt;br/&gt;
 - full cleanup of the current database&lt;br/&gt;
@@ -683,12 +735,12 @@ Enter the superuser password that you specified in the server configuration file
 Введите пароль суперпользователя, который вы указали в конфигурационном файле сервера для получения доступа к ним.</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="225"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="227"/>
         <source>Guide</source>
         <translation>Руководство</translation>
     </message>
     <message>
-        <location filename="../qml/myTemplates/AppInstructor.qml" line="341"/>
+        <location filename="../qml/myTemplates/AppInstructor.qml" line="343"/>
         <source>Skip guide</source>
         <translation>Пропустить</translation>
     </message>
@@ -696,67 +748,104 @@ Enter the superuser password that you specified in the server configuration file
 <context>
     <name>ClientSettingsPage</name>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="23"/>
+        <location filename="../ClientSettingsPage.qml" line="25"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="53"/>
+        <location filename="../ClientSettingsPage.qml" line="64"/>
         <source>Inspector ID</source>
         <translation>ID валидатора</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="62"/>
+        <location filename="../ClientSettingsPage.qml" line="73"/>
         <source>Re-auth. delay</source>
         <translation>Пауза повт. уч.</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="72"/>
+        <location filename="../ClientSettingsPage.qml" line="83"/>
         <source>Client password</source>
         <translation>Пароль прилож.</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="81"/>
         <source>Server IP</source>
-        <translation>IP сервера</translation>
+        <translation type="vanished">IP сервера</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="91"/>
         <source>Server port</source>
-        <translation>Порт сервера</translation>
+        <translation type="vanished">Порт сервера</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="100"/>
         <source>Server password</source>
-        <translation>Пароль сервера</translation>
+        <translation type="vanished">Пароль сервера</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="113"/>
+        <location filename="../ClientSettingsPage.qml" line="156"/>
         <source>Can&apos;t connect to server</source>
         <translation>Невозможно подключиться к серверу</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="124"/>
+        <location filename="../ClientSettingsPage.qml" line="91"/>
         <source>Entry sound</source>
         <translation>Звук входа</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="142"/>
+        <location filename="../ClientSettingsPage.qml" line="113"/>
+        <source>Connection settings</source>
+        <translation>Настройки подключения</translation>
+    </message>
+    <message>
+        <location filename="../ClientSettingsPage.qml" line="124"/>
+        <source> Server IP</source>
+        <translation>IP сервера</translation>
+    </message>
+    <message>
+        <location filename="../ClientSettingsPage.qml" line="134"/>
+        <source> Server port</source>
+        <translation>Порт сервера</translation>
+    </message>
+    <message>
+        <location filename="../ClientSettingsPage.qml" line="143"/>
+        <source> Server password</source>
+        <translation>Пароль сервера</translation>
+    </message>
+    <message>
+        <location filename="../ClientSettingsPage.qml" line="171"/>
+        <source>Decoder settings</source>
+        <translation>Настройки сканера qr кодов</translation>
+    </message>
+    <message>
+        <location filename="../ClientSettingsPage.qml" line="185"/>
+        <source> Scaling</source>
+        <translation>Масштабирование</translation>
+    </message>
+    <message>
+        <location filename="../ClientSettingsPage.qml" line="215"/>
+        <source> Pocessed image size: </source>
+        <translation>Размер обрабатываемого кадра:</translation>
+    </message>
+    <message>
+        <location filename="../ClientSettingsPage.qml" line="223"/>
+        <source> FPS</source>
+        <translation>FPS</translation>
+    </message>
+    <message>
+        <location filename="../ClientSettingsPage.qml" line="254"/>
         <source>Change role</source>
         <translation>Сменить роль</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="162"/>
+        <location filename="../ClientSettingsPage.qml" line="280"/>
         <source>Wrong server password</source>
         <translation>Неправильный пароль сервера</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="169"/>
+        <location filename="../ClientSettingsPage.qml" line="287"/>
         <source>Network error</source>
         <translation>Ошибка сети</translation>
     </message>
     <message>
-        <location filename="../ClientSettingsPage.qml" line="199"/>
+        <location filename="../ClientSettingsPage.qml" line="317"/>
         <source>Connection timed out</source>
         <translation>Превышено время ожидания</translation>
     </message>
@@ -1537,7 +1626,7 @@ Enter the superuser password that you specified in the server configuration file
     <message>
         <location filename="../StartPage.qml" line="19"/>
         <source>Inspector</source>
-        <translation>Инспектор</translation>
+        <translation>Валидатор</translation>
     </message>
     <message>
         <location filename="../StartPage.qml" line="68"/>
@@ -1548,7 +1637,7 @@ Enter the superuser password that you specified in the server configuration file
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.qml" line="354"/>
+        <location filename="../main.qml" line="390"/>
         <source>password</source>
         <translation>пароль</translation>
     </message>

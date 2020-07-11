@@ -170,12 +170,16 @@ Page {
         password: globalSettings.serverPassword
         dbpassword: globalSettings.dbPassword
         onModelChanged: {
+            busyPopup.close()
             if (data=="ERROR: Wrong DB Password")
                 dbWrongPassword.open()
             else
                 stackView.push(goToPage)
         }
-        onErrorFounded: serverConnectionErrorDialog.open()
+        onErrorFounded: {
+            busyPopup.close()
+            serverConnectionErrorDialog.open()
+        }
 
     }
     Dialog {
@@ -201,7 +205,10 @@ Page {
             wrapMode: Text.WordWrap
             text: qsTr("Database password field is empty!")+mytrans.emptyString
         }
-        onClosed: mtf1.activeFocus()
+        onClosed: {
+            busyPopup.close()
+            mtf1.activeFocus()
+        }
     }
     Dialog {
         id: dbWrongPassword
@@ -220,10 +227,37 @@ Page {
     property string goToPage: ""
     function checkdbAndPush(page){
         goToPage=page;
+        busyPopup.open()
         if (mtf1.placeholderText=="db password")
             dbPasswordIsEmptyDialog.open()
         else
             sqlPing.sendGetQuery("select null")
+    }
+
+    Popup {
+        id: busyPopup
+        anchors.centerIn: parent
+        width: parent.width/4
+        height: width
+        modal: true
+        focus: true
+        background: Rectangle {anchors.fill: parent; color: "transparent"}
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+        BusyIndicator {
+            anchors.fill: parent
+            running: true
+        }
+        onOpened: timerConnection.start()
+        onClosed: timerConnection.stop()
+        Timer {
+            id: timerConnection
+            interval: 3000; running: false; repeat: false
+            onTriggered: {
+                popupConnection.close();
+                errorText.visible = true;
+                errorText.text=qsTr("Connection timed out")+mytrans.emptyString;
+            }
+        }
     }
 }
 

@@ -16,14 +16,24 @@ Page {
             event.accepted = true;
         }
     }
+    property bool camChanged: false
+    onCamChangedChanged: console.log("RETARD ALLERT: "+camChanged)
     property bool askSetPassword: false
-    Component.onCompleted: askSetPassword ? mtf6.activeFocus(): {}
+    Component.onCompleted: page.camChanged=false
     My.SettingsHeader {
         id: msh
         headertext: qsTr("Settings")+mytrans.emptyString+mytrans.emptyString
         fontsize: fontSize
         backSource: "../images/back_bold.png"
-        onBackClicked: stackView.pop();
+        onBackClicked: {
+            if (page.camChanged)
+            {
+                 console.log("RETARD ALLERT!!!!!!!!!!!!!: "+camChanged)
+                mainwindow.updateCamera()
+            }
+            else
+                stackView.pop();
+        }
     }
 
     Flickable {
@@ -34,7 +44,7 @@ Page {
             bottom: parent.bottom
         }
         contentWidth: parent.width
-        contentHeight: 8*mtf1.height+7*column.spacing
+        contentHeight: 14*mtf1.height+13*column.spacing
         clip: true
         boundsBehavior: Flickable.StopAtBounds
         Pane {
@@ -47,6 +57,7 @@ Page {
             topPadding: 10
             spacing: page.height/50
             property alias maxLabWidth: mtf6.labelWidth
+            ///INSPECTOR SETTINGS
             My.TextField {
                 id: mtf1
                 labelWidth: column.maxLabWidth
@@ -75,10 +86,42 @@ Page {
                 selectByMouse: true
                 onFieldTextChanged: globalSettings.clientPassword=fieldText
             }
+            My.ComboBoxWithButton {
+                id: mcbwb
+                labelText: qsTr("Entry sound")+mytrans.emptyString
+                model: ["mute","sound1", "sound2", "sound3", "sound4", "sound5"]
+                labelWidth: column.maxLabWidth
+                fontsize: fontSize
+                buttonSource: "../images/sound.png"
+                box.onCurrentValueChanged: globalSettings.soundSource=box.currentText
+                box.currentIndex: Number(globalSettings.soundSource[5])
+                onButtonClicked: {
+                    playSound.source="../sounds/"+box.currentText+".wav"
+                    playSound.play()
+                }
+                SoundEffect {
+                    id: playSound
+                    volume: 1
+                    source: "../sounds/sound1.wav"
+                }
+            }
+            ///CONNECT SETTINGS
+            Text {
+                id: lbl1
+                width: parent.width
+                fontSizeMode: Text.Fit
+                text: qsTr("Connection settings")+mytrans.emptyString
+                //color: "mediumseagreen"
+                font.pixelSize: fontSize+3
+                leftPadding: 10
+                font.weight: Font.ExtraBold
+                horizontalAlignment: Text.AlignLeft
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
             My.TextField {
                 id: mtf4
                 labelWidth: column.maxLabWidth
-                labelText: qsTr("Server IP")+mytrans.emptyString
+                labelText: qsTr(" Server IP")+mytrans.emptyString
                 placeholderText: globalSettings.serverIP!==""?globalSettings.serverIP:"IP"
                 fontsize: fontSize
                 selectByMouse: true
@@ -88,7 +131,7 @@ Page {
             My.TextField {
                 id: mtf5
                 labelWidth: column.maxLabWidth
-                labelText: qsTr("Server port")+mytrans.emptyString
+                labelText: qsTr(" Server port")+mytrans.emptyString
                 placeholderText: globalSettings.serverPort!==""?globalSettings.serverPort:"port"
                 fontsize: fontSize
                 selectByMouse: true
@@ -97,7 +140,7 @@ Page {
             }
             My.TextFieldWithButton {
                 id: mtf6
-                labelText: qsTr("Server password")+mytrans.emptyString
+                labelText: qsTr(" Server password")+mytrans.emptyString
                 fontsize: fontSize
                 selectByMouse: true
                 buttonSource: "../images/connect.png"
@@ -119,25 +162,94 @@ Page {
                 onVisibleChanged: visible ? timeres.start() : {}
                 Timer { id: timeres; interval: 3000; running: false; repeat: false; onTriggered: errorText.visible=false}
             }
-            My.ComboBoxWithButton {
-                id: mcbwb
-                labelText: qsTr("Entry sound")+mytrans.emptyString
-                model: ["mute","sound1", "sound2", "sound3", "sound4", "sound5"]
-                labelWidth: column.maxLabWidth
-                fontsize: fontSize
-                buttonSource: "../images/sound.png"
-                box.onCurrentValueChanged: globalSettings.soundSource=box.currentText
-                box.currentIndex: Number(globalSettings.soundSource[5])
-                onButtonClicked: {
-                    playSound.source="../sounds/"+box.currentText+".wav"
-                    playSound.play()
+
+            ///DECODER SETTINGS
+            Text {
+                id: lbl2
+                width: parent.width
+                fontSizeMode: Text.Fit
+                text: qsTr("Decoder settings")+mytrans.emptyString
+                //color: "mediumseagreen"
+                font.pixelSize: fontSize+3
+                leftPadding: 10
+                font.weight: Font.ExtraBold
+                horizontalAlignment: Text.AlignLeft
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            Row {
+                id: row
+                spacing: 10
+                Label {
+                    id: label
+                    leftPadding: 10
+                    text: qsTr(" Scaling")+mytrans.emptyString
+                    font.pixelSize: fontSize
+                    anchors.verticalCenter: parent.verticalCenter
+                    onClipChanged: textfield.forceActiveFocus()
                 }
-                SoundEffect {
-                    id: playSound
-                    volume: 1
-                    source: "../sounds/sound1.wav"
+                Slider {
+                    id: slider
+                    width:  parent.parent.width-label.width-textfield.width-30
+                    from: 0.2
+                    value: globalSettings.scaling
+                    stepSize: 0.05
+                    to: 1
+                    anchors.verticalCenter: parent.verticalCenter
+                    onValueChanged: {
+                        textfield.text="x"+value.toFixed(2).toString()
+                        globalSettings.scaling=value
+                        page.camChanged=true
+                    }
+                }
+                Text {
+                    id: textfield
+                    font.pixelSize: fontSize
+                    width: 3*fontSize
+                    anchors.verticalCenter: parent.verticalCenter
                 }
             }
+            Label {
+                id: label3
+                leftPadding: 10
+                font.pixelSize: fontSize
+                text: qsTr(" Pocessed image size: ")+(slider.value*globalSettings.camera_width).toFixed(0)+"x"+(slider.value*globalSettings.camera_height).toFixed(0)+mytrans.emptyString
+            }
+            Row {
+                id: row2
+                spacing: 10
+                Label {
+                    id: label2
+                    leftPadding: 10
+                    text: qsTr(" FPS")+mytrans.emptyString
+                    width: label.width
+                    font.pixelSize: fontSize
+                    anchors.verticalCenter: parent.verticalCenter
+                    onClipChanged: textfield2.forceActiveFocus()
+                }
+                Slider {
+                    id: slider2
+                    width:  parent.parent.width-label2.width-textfield2.width-30
+                    from: 5
+                    value: globalSettings.camera_fps
+                    stepSize: 1
+                    to: 30
+                    anchors.verticalCenter: parent.verticalCenter
+                    onValueChanged: {
+                        textfield2.text=value.toFixed(0).toString()
+                        globalSettings.camera_fps=value
+                        page.camChanged=true
+                    }
+                }
+                Text {
+                    id: textfield2
+                    font.pixelSize: fontSize
+                    width: 3*fontSize
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+            }
+
+
+
             My.NextButton {
                 text: qsTr("Change role")+mytrans.emptyString
                 imageSource: "../images/forward.png"
@@ -147,6 +259,12 @@ Page {
                     mainwindow.changeRole()
                 }
             }
+            //            My.NextButton {
+            //                text: qsTr("Decoder settings")+mytrans.emptyString
+            //                imageSource: "../images/forward.png"
+            //                fontsize: fontSize
+            //                mousearea.onClicked: stackView.push("DecoderSettingsPage.qml");
+            //            }
         }
     }
 

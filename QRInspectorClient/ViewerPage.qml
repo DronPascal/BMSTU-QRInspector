@@ -10,12 +10,14 @@ Page {
     id: page
     title: "Viewer Page"
     visible: true
-
     Keys.onReleased: {
         if (event.key === Qt.Key_Back) {
             //            stackView.pop();
             event.accepted = true;
         }
+    }
+    function destroy(){
+        camera.destroy()
     }
     property int detectedTags: 0
     property string lastTag: ""
@@ -28,22 +30,25 @@ Page {
         color: "gray"
         anchors.fill: videoOutput
     }
-
     Camera
     {
         id: camera
+
         position: globalSettings.cameraPosition
-        focus.focusMode: Camera.FocusContinuous
-        focus.focusPointMode: Camera.FocusPointCenter
-        viewfinder.maximumFrameRate: 5
+        focus {
+            focusMode: CameraFocus.FocusContinuous
+            focusPointMode: CameraFocus.FocusPointAuto
+        }
+
+        viewfinder.maximumFrameRate: globalSettings.camera_fps
         onPositionChanged: globalSettings.cameraPosition = camera.position
-        Component.onCompleted: console.log(camera.viewfinder.resolution.width+"     "+ camera.viewfinder.resolution.height)
     }
 
     QZXingFilter
     {
         id: zxingFilter
         mirroring: globalSettings.cameraPosition === Camera.FrontFace
+        scaling: globalSettings.scaling
         captureRect: videoOutput.sourceRect
         decoder {
             enabledDecoders: QZXing.DecoderFormat_QR_CODE
@@ -72,6 +77,16 @@ Page {
             framesDecoded++;
             if(succeeded)
                 console.log("frame finished: " + succeeded, decodeTime, timePerFrameDecode, framesDecoded);
+        }
+        onCameraResolution: {
+            globalSettings.camera_width = resolution.split("x")[0]
+            globalSettings.camera_height = resolution.split("x")[1]
+            if (!globalSettings.cameraConfigured)
+            {
+                console.log("CONFIGURE CAM")
+                globalSettings.scaling=500/Math.max(globalSettings.camera_width, globalSettings.camera_height)
+                globalSettings.cameraConfigured=true
+            }
         }
     }
 
@@ -131,8 +146,8 @@ Page {
                 globalSettings.serverPassword=confArr[7];
                 globalSettings.soundSource=confArr[8];
             }
-       mainwindow.showImg("../images/configured.png")
-       myclient.sendGet("","ping");
+        mainwindow.showImg("../images/configured.png")
+        myclient.sendGet("","ping");
     }
 
     VideoOutput
@@ -333,10 +348,8 @@ Page {
                 id: text2
                 wrapMode: Text.Wrap
                 font.pixelSize: 20
-                text: "Last tag: " + page.lastTag
-            }
-            TextArea {
-                id: textArea
+                text: "Last tag: " + page.lastTag+"\ncam_fps: "+globalSettings.camera_fps+
+                      "\nPocessed image size: "+(globalSettings.scaling*globalSettings.camera_width).toFixed(0)+"x"+(globalSettings.scaling*globalSettings.camera_height).toFixed(0)
             }
         }
     }

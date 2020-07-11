@@ -382,9 +382,14 @@ QString QZXingFilterRunnable::decode(const QImage &image)
     if (filter != ZXING_NULLPTR)
     {
         decodedStr = filter->decoder.decodeImage((filter->mirroring) ?
-                                                     (image.height()>700 ? image.mirrored().scaledToHeight(700) : image.mirrored()) :
-                                                     (image.height()>700 ? image.scaledToHeight(700) : image));
-    return decodedStr;
+                                                     image.mirrored().scaledToHeight(image.height()*filter->scaling):
+                                                     image.scaledToHeight(image.height()*filter->scaling));
+        //qDebug()<<filter->scaling;
+        if (filter->firstFrame) {
+            emit filter->cameraResolution(QString::number(image.width())+"x"+QString::number(image.height()));
+            filter->firstFrame=false;
+        }
+        return decodedStr;
     }
     else return QString();
 }

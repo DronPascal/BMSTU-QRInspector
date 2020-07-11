@@ -44,19 +44,17 @@ Page {
 
     function addToDatabase() {
         var query="";
-        var group;
+        var group=mtf1.fieldText;
         if (page.editGroup=="")
         {
-            group = mtf1.fieldText;
             if (mtf1.fieldText!=="")//date
                 query+="INSERT INTO groupnames (name) VALUES ('"+mtf1.fieldText+"')";
         }
         else
         {
-            group=page.editGroup
-            query+="UPDATE groupnames SET name='"+mtf1.fieldText+"' WHERE name='"+page.editGroup+"'"
-            query+=";"+"DELETE FROM groups WHERE groupid=(SELECT groupid FROM groupnames WHERE name='"+page.editGroup+"')"
-            query+=";"+"DELETE FROM invites WHERE groupid=(SELECT groupid FROM groupnames WHERE name='"+page.editGroup+"')"
+            query+="UPDATE groupnames SET name='"+group+"' WHERE name='"+page.editGroup+"'"
+            query+=";"+"DELETE FROM groups WHERE groupid=(SELECT groupid FROM groupnames WHERE name='"+group+"')"
+            query+=";"+"DELETE FROM invites WHERE groupid=(SELECT groupid FROM groupnames WHERE name='"+group+"')"
         }
         if (mcvmembers.elementmodel.count!=0)
             for (var i=0; i<mcvmembers.elementmodel.count; i++)
