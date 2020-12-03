@@ -11,5 +11,4 @@
 https://drive.google.com/drive/folders/1WliTTdy9TGyL9vs62rT4UmO5bYHCzjID?usp=sharing
 
 Скачать мобильное приложение:
-
 https://play.google.com/store/apps/details?id=org.bmstu.pascal.qrinspector&hl=ru&gl=US
